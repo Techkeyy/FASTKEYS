@@ -145,6 +145,6 @@ Isolated execution timing on exact `engine.py` pipeline (measured on Windows hos
 ## 11. Git Tracking & Deployment Status
 - **Repository**: `C:\Users\HomePC\Desktop\FASTKEYS`
 - **Branch**: `main`
-- **Latest Commit**: Pending commit for broad validation & benchmark suite.
-- **GitHub Remote**: Ready to push to a new public GitHub repo via authenticated `gh` CLI.
-- **Render Deployment**: Configured for `standard` (1 CPU / 2 GB RAM) in `render.yaml`. Pending owner authorization for Render account connection / promo credit.
+- **Latest Commit**: `1b0c803`
+- **GitHub Remote**: `https://github.com/Techkeyy/FASTKEYS` (Public)
+- **Render Deployment**: Configured for `standard` (1 CPU / 2 GB RAM) in `render.yaml`. Pending owner authorization / partner promo connection to deploy live web service.

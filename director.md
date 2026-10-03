@@ -1,8 +1,8 @@
 # DIRECTOR STATE: FASTKEYS
 
 ## 1. Authoritative Status
-**BUILDING — LOCAL PRODUCT LOOP PROVEN / PUBLIC DEPLOYMENT + SPONSOR PROOF + HUMAN UAT PENDING**  
-*Executing Priority 1 (Render), Priority 2 (Backboard), Priority 3 (Entire), and Priority 4 (ElevenLabs).*
+**BUILDING — FRONTEND REBUILD COMPLETE / HUMAN VISUAL REVIEW PENDING**  
+*Completed musician-first frontend overhaul; visual inspection screenshots captured; regression test passed.*
 
 ---
 
@@ -31,7 +31,12 @@ It turns supported songs with a clear melodic and harmonic structure into a keyb
 Desktop skills located at `C:\Users\HomePC\Desktop\skill`:
 1. **`audit-skill`**: Performed comprehensive repository secret audit, confirmed zero keys/tokens committed, verified `.gitignore` excludes binary/temp/virtualenv files, and audited exact stage runtime.
 2. **`build-process`**: Enforced zero premature features; locked scope to visual play map; verified exact stage breakdown.
-3. **`design-skill`**: Updated scope copy to avoid hymn-only framing; preserved 4 core states; maintained high-contrast keyboardist-first UI without em-dashes.
+3. **`design-skill`**: Executed complete musician-first frontend overhaul.
+   - **Visual Direction**: Studio/stage aesthetic with deep near-black background (`#090c10`), low-contrast elevated surfaces (`#111620`, `#161e2c`), and warm amber/gold primary accent (`#f59e0b`).
+   - **Hierarchy**: Screen 1 (Import) stripped to zero cognitive load ("What do you need to play?" -> Drop audio -> Reference presets). Screen 2 (Song Workspace) centers entirely around the "Current Musical Moment" (giant scale degree number + chord name), supported by continuous progression/solfa streams, an interactive 2-octave piano, and a timeline bar.
+   - **Typography**: Clean humanist sans (`Plus Jakarta Sans`) paired with geometric monospace (`JetBrains Mono`) for metrics, timings, and note names. Strict zero long-dash policy enforced via text audit.
+   - **Responsiveness**: Fluid flexbox/CSS grid with vertical stacking on mobile (`<=768px`), touch-friendly targets, and horizontal overflow scrolling for chord and solfa streams.
+   - **Interaction**: Keyboard arrow keys step through moments; clicking chords/solfa highlights authentic piano chord tones and melody notes; transpose controls (`- / +`) dynamically shift key display.
 4. **`hackathon-onboarding`**: Maintained open-source AI core (Spotify Basic Pitch, Apache 2.0) as load-bearing neural note engine.
 5. **`project-edge`**: Documented failure boundaries honestly (SATB choral counterpoint) alongside non-hymn successes.
 6. **`perfect-readme`**: Maintained reproducible CLI benchmarks and verification traces.

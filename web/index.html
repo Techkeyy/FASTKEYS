@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FASTKEYS — Emergency Song-Learning Play Map for Keyboardists</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f17;
+      --card-bg: #131b2a;
+      --card-border: #1f2c42;
+      --text: #f0f4fc;
+      --text-muted: #8b9bb4;
+      --accent: #3b82f6;
+      --accent-glow: rgba(59, 130, 246, 0.15);
+      --highlight: #10b981;
+      --highlight-gold: #f59e0b;
+      --error: #ef4444;
+      --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+      width: 100%;
+    }
+
+    header {
+      border-bottom: 1px solid var(--card-border);
+      padding: 1.25rem 0;
+      background: rgba(11, 15, 23, 0.8);
+      backdrop-filter: blur(12px);
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .logo-icon {
+      background: var(--accent);
+      color: #fff;
+      font-weight: 800;
+      font-family: var(--font-mono);
+      padding: 0.4rem 0.6rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      letter-spacing: -0.5px;
+    }
+    .logo-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #fff;
+    }
+    .logo-subtitle {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .scope-pill {
+      background: rgba(59, 130, 246, 0.1);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      color: #93c5fd;
+      font-size: 0.75rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: 9999px;
+      font-weight: 600;
+    }
+
+    .scope-notice {
+      background: rgba(31, 44, 66, 0.5);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      margin: 1.5rem 0;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .scope-notice strong { color: #fff; }
+
+    .state-panel {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 2.5rem 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .upload-zone {
+      border: 2px dashed #2d3f5e;
+      border-radius: 12px;
+      padding: 3.5rem 2rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      background: rgba(19, 27, 42, 0.5);
+    }
+    .upload-zone:hover, .upload-zone.dragover {
+      border-color: var(--accent);
+      background: var(--accent-glow);
+    }
+    .upload-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .upload-desc {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+    .file-input { display: none; }
+    .btn-upload {
+      background: var(--accent);
+      color: #fff;
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.75rem 1.75rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.15s ease;
+      display: inline-block;
+    }
+    .btn-upload:hover { background: #2563eb; }
+
+    .sample-buttons {
+      margin-top: 2rem;
+      text-align: center;
+      border-top: 1px solid var(--card-border);
+      padding-top: 1.5rem;
+    }
+    .sample-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+    }
+    .sample-chip {
+      background: #1a2436;
+      border: 1px solid #2d3f5e;
+      color: #cbd5e1;
+      padding: 0.4rem 0.85rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      cursor: pointer;
+      margin: 0.25rem;
+      transition: all 0.15s ease;
+    }
+    .sample-chip:hover {
+      background: #25334c;
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    .analyzing-box {
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+    .spinner {
+      width: 48px;
+      height: 48px;
+      border: 4px solid var(--card-border);
+      border-top: 4px solid var(--accent);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 1.5rem;
+    }
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    .analyzing-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .analyzing-step {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-family: var(--font-mono);
+    }
+
+    .error-box {
+      background: rgba(239, 68, 68, 0.08);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      padding: 2rem;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .error-title {
+      color: #f87171;
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .error-desc {
+      color: #fca5a5;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .result-view { display: none; }
+    .result-meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      background: #182235;
+      border: 1px solid var(--card-border);
+      padding: 1.25rem 1.5rem;
+      border-radius: 10px;
+      margin-bottom: 1.5rem;
+    }
+    .meta-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #fff;
+    }
+    .meta-file {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+    }
+    .meta-badges {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    .key-badge {
+      background: #1e3a8a;
+      border: 1px solid #3b82f6;
+      color: #bfdbfe;
+      padding: 0.4rem 1rem;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 1.1rem;
+      font-family: var(--font-mono);
+    }
+
+    .section-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.75px;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .timeline-container {
+      margin-bottom: 2rem;
+    }
+    .chord-stream {
+      display: flex;
+      gap: 0.5rem;
+      overflow-x: auto;
+      padding-bottom: 0.75rem;
+    }
+    .chord-card {
+      flex: 0 0 auto;
+      min-width: 100px;
+      background: #162032;
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 0.85rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .chord-card:hover, .chord-card.selected {
+      border-color: var(--accent);
+      background: #1e2c45;
+      transform: translateY(-2px);
+    }
+    .chord-degree {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--highlight-gold);
+      font-family: var(--font-mono);
+    }
+    .chord-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      margin: 0.2rem 0;
+    }
+    .chord-time {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+    }
+
+    .melody-strip {
+      background: #101726;
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    .solfa-stream {
+      display: flex;
+      gap: 0.5rem;
+      overflow-x: auto;
+      padding-bottom: 0.5rem;
+    }
+    .solfa-card {
+      flex: 0 0 auto;
+      min-width: 75px;
+      background: #192438;
+      border: 1px solid #283954;
+      border-radius: 6px;
+      padding: 0.6rem 0.5rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .solfa-card:hover, .solfa-card.selected {
+      border-color: var(--highlight);
+      background: #1e334d;
+    }
+    .solfa-syllable {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--highlight);
+      font-family: var(--font-mono);
+    }
+    .solfa-note {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #94a3b8;
+    }
+    .solfa-time {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+    }
+
+    .keyboard-container {
+      background: #101726;
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .keyboard-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+    .piano {
+      position: relative;
+      display: inline-flex;
+      height: 140px;
+      padding: 8px;
+      background: #080c14;
+      border-radius: 8px;
+      border: 1px solid #1f2c42;
+    }
+    .key-white {
+      width: 32px;
+      height: 100%;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 0 0 4px 4px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 8px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #475569;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.1s ease;
+    }
+    .key-white.active {
+      background: #60a5fa !important;
+      color: #fff !important;
+      border-color: #3b82f6 !important;
+    }
+    .key-black {
+      position: absolute;
+      width: 20px;
+      height: 60%;
+      background: #0f172a;
+      border-radius: 0 0 3px 3px;
+      z-index: 10;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 4px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: #94a3b8;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.1s ease;
+    }
+    .key-black.active {
+      background: #2563eb !important;
+      color: #fff !important;
+    }
+
+    footer {
+      margin-top: auto;
+      border-top: 1px solid var(--card-border);
+      padding: 1.5rem 0;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .footer-tech {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      margin-top: 0.25rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <div class="logo-badge">
+        <span class="logo-icon">FK</span>
+        <div>
+          <h1 class="logo-title">FASTKEYS</h1>
+          <p class="logo-subtitle">Emergency Song-Learning Map for Keyboardists</p>
+        </div>
+      </div>
+      <div class="scope-pill">Hymns, Worship & Clear Lead Songs</div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <div class="scope-notice">
+      <strong>Honest Supported Scope:</strong> FASTKEYS accurately transcribes hymns, worship songs, piano-led music, and songs with clear lead melodies. Complex dense polyphony or heavy wall-of-sound mixes may cause acoustic harmonic interference.
+    </div>
+
+    <!-- STATE 1: READY FOR AUDIO -->
+    <div id="stateReady" class="state-panel">
+      <div class="upload-zone" id="dropZone">
+        <h2 class="upload-title">Drop your song audio here</h2>
+        <p class="upload-desc">Upload .wav, .ogg, .mp3, or .flac to generate an emergency visual chord & sol-fa play map</p>
+        <input type="file" id="fileInput" class="file-input" accept=".wav,.ogg,.mp3,.flac,.oga">
+        <button class="btn-upload" onclick="document.getElementById('fileInput').click()">Select Audio File</button>
+
+        <div class="sample-buttons">
+          <div class="sample-label">Or test with verified reference fixtures:</div>
+          <button class="sample-chip" onclick="analyzePreset('when_i_survey_20s.wav')">Organ Hymn ("When I Survey", D Maj)</button>
+          <button class="sample-chip" onclick="analyzePreset('fixture_pop_C.wav')">Pop Loop (C-G-Am-F, C Maj)</button>
+          <button class="sample-chip" onclick="analyzePreset('fixture_lead_D.wav')">Lead + Accompaniment (D Maj)</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATE 2: ANALYZING -->
+    <div id="stateAnalyzing" class="state-panel" style="display: none;">
+      <div class="analyzing-box">
+        <div class="spinner"></div>
+        <h2 class="analyzing-title">Analyzing Song Structure</h2>
+        <p class="analyzing-step" id="analyzingStatus">Executing Spotify Basic Pitch Neural Net & DSP Key-Finding...</p>
+      </div>
+    </div>
+
+    <!-- STATE 3: FAILED -->
+    <div id="stateFailed" class="state-panel" style="display: none;">
+      <div class="error-box">
+        <h2 class="error-title">Analysis Failed</h2>
+        <p class="error-desc" id="errorMessage">An unexpected error occurred during audio processing.</p>
+        <button class="btn-upload" onclick="resetState()">Try Another File</button>
+      </div>
+    </div>
+
+    <!-- STATE 4: RESULT (Keyboardist Visual Play Map) -->
+    <div id="stateResult" class="result-view">
+      <div class="result-meta">
+        <div>
+          <h2 class="meta-title" id="resFilename">song_audio.wav</h2>
+          <span class="meta-file" id="resSummary">Duration: 20s | Notes Transcribed: 42</span>
+        </div>
+        <div class="meta-badges">
+          <div>
+            <div style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Key</div>
+            <div class="key-badge" id="resKey">D Major</div>
+          </div>
+          <button class="sample-chip" onclick="resetState()" style="margin-left: 1rem;">Analyze Another</button>
+        </div>
+      </div>
+
+      <!-- MAIN SONG MAP: CHORD PROGRESSION & DEGREES -->
+      <div class="timeline-container">
+        <div class="section-title">
+          <span>1. Chord Progression & Scale Degrees</span>
+          <span style="font-family: var(--font-mono); font-size: 0.75rem;" id="resDegreeFlow">1 -> 5 -> 6 -> 4</span>
+        </div>
+        <div class="chord-stream" id="chordStream">
+          <!-- Dynamically populated chord cards -->
+        </div>
+      </div>
+
+      <!-- MELODY STRIP: TONIC SOL-FA -->
+      <div class="melody-strip">
+        <div class="section-title">
+          <span>2. Primary Melody (Tonic Sol-fa Lead Strip)</span>
+          <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--highlight);" id="resSolfaFlow">do - re - mi - fa</span>
+        </div>
+        <div class="solfa-stream" id="solfaStream">
+          <!-- Dynamically populated solfa notes -->
+        </div>
+      </div>
+
+      <!-- INTERACTIVE VISUAL KEYBOARD -->
+      <div class="keyboard-container">
+        <div class="section-title">
+          <span>3. Visual Keyboard Reference</span>
+          <span id="activeSelectionLabel" style="color: var(--highlight-gold); font-family: var(--font-mono);">Click a chord or note above</span>
+        </div>
+        <p class="keyboard-desc">Click any chord block or melody note above to visualize the played notes on the keyboard.</p>
+        <div id="pianoWidget" class="piano">
+          <!-- 2 Octave Keyboard dynamically generated -->
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>FASTKEYS Visual Emergency Companion for Keyboardists</p>
+      <p class="footer-tech">AI Core: Spotify Basic Pitch (Apache 2.0) | DSP: Krumhansl-Schmuckler CQT Chromagram</p>
+    </div>
+  </footer>
+
+  <script>
+    const PITCH_CLASSES = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+    const WHITE_KEYS = [
+      { name: 'C3', midi: 48 }, { name: 'D3', midi: 50 }, { name: 'E3', midi: 52 },
+      { name: 'F3', midi: 53 }, { name: 'G3', midi: 55 }, { name: 'A3', midi: 57 }, { name: 'B3', midi: 59 },
+      { name: 'C4', midi: 60 }, { name: 'D4', midi: 62 }, { name: 'E4', midi: 64 },
+      { name: 'F4', midi: 65 }, { name: 'G4', midi: 67 }, { name: 'A4', midi: 69 }, { name: 'B4', midi: 71 },
+      { name: 'C5', midi: 72 }
+    ];
+    const BLACK_KEYS = [
+      { name: 'C#3', midi: 49, left: 22 }, { name: 'D#3', midi: 51, left: 54 },
+      { name: 'F#3', midi: 54, left: 118 }, { name: 'G#3', midi: 56, left: 150 }, { name: 'A#3', midi: 58, left: 182 },
+      { name: 'C#4', midi: 61, left: 246 }, { name: 'D#4', midi: 63, left: 278 },
+      { name: 'F#4', midi: 66, left: 342 }, { name: 'G#4', midi: 68, left: 374 }, { name: 'A#4', midi: 70, left: 406 }
+    ];
+
+    function renderPiano() {
+      const p = document.getElementById('pianoWidget');
+      p.innerHTML = '';
+      WHITE_KEYS.forEach(k => {
+        const d = document.createElement('div');
+        d.className = 'key-white';
+        d.id = `key-${k.midi}`;
+        d.textContent = k.name.replace(/[0-9]/g, '');
+        p.appendChild(d);
+      });
+      BLACK_KEYS.forEach(k => {
+        const d = document.createElement('div');
+        d.className = 'key-black';
+        d.id = `key-${k.midi}`;
+        d.style.left = `${k.left + 8}px`;
+        p.appendChild(d);
+      });
+    }
+    renderPiano();
+
+    function highlightMidi(midis) {
+      document.querySelectorAll('.key-white, .key-black').forEach(el => el.classList.remove('active'));
+      midis.forEach(m => {
+        let normM = m;
+        while (normM < 48) normM += 12;
+        while (normM > 72) normM -= 12;
+        const el = document.getElementById(`key-${normM}`);
+        if (el) el.classList.add('active');
+      });
+    }
+
+    function setState(state) {
+      document.getElementById('stateReady').style.display = state === 'ready' ? 'block' : 'none';
+      document.getElementById('stateAnalyzing').style.display = state === 'analyzing' ? 'block' : 'none';
+      document.getElementById('stateFailed').style.display = state === 'failed' ? 'block' : 'none';
+      document.getElementById('stateResult').style.display = state === 'result' ? 'block' : 'none';
+    }
+
+    function resetState() {
+      setState('ready');
+      document.getElementById('fileInput').value = '';
+    }
+
+    const dropZone = document.getElementById('dropZone');
+    const fileInput = document.getElementById('fileInput');
+
+    dropZone.addEventListener('dragover', (e) => { e.preventDefault(); dropZone.classList.add('dragover'); });
+    dropZone.addEventListener('dragleave', () => { dropZone.classList.remove('dragover'); });
+    dropZone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dropZone.classList.remove('dragover');
+      if (e.dataTransfer.files.length > 0) {
+        processUpload(e.dataTransfer.files[0]);
+      }
+    });
+    fileInput.addEventListener('change', (e) => {
+      if (e.target.files.length > 0) {
+        processUpload(e.target.files[0]);
+      }
+    });
+
+    async function processUpload(file) {
+      setState('analyzing');
+      document.getElementById('analyzingStatus').textContent = `Analyzing "${file.name}" with Spotify Basic Pitch & DSP...`;
+      
+      const formData = new FormData();
+      formData.append('file', file);
+
+      try {
+        const response = await fetch('/api/analyze', {
+          method: 'POST',
+          body: formData
+        });
+        if (!response.ok) {
+          const err = await response.json();
+          throw new Error(err.detail || 'Analysis request failed');
+        }
+        const data = await response.json();
+        renderResult(data);
+      } catch (err) {
+        document.getElementById('errorMessage').textContent = err.message;
+        setState('failed');
+      }
+    }
+
+    async function analyzePreset(presetName) {
+      setState('analyzing');
+      document.getElementById('analyzingStatus').textContent = `Analyzing reference fixture: ${presetName}...`;
+      try {
+        const res = await fetch(`/${presetName}`);
+        const blob = await res.blob();
+        const file = new File([blob], presetName, { type: 'audio/wav' });
+        await processUpload(file);
+      } catch (err) {
+        document.getElementById('errorMessage').textContent = `Could not load preset: ${err.message}`;
+        setState('failed');
+      }
+    }
+
+    function renderResult(data) {
+      document.getElementById('resFilename').textContent = data.filename;
+      document.getElementById('resSummary').textContent = `Duration: ${data.duration}s | Total Raw Notes: ${data.raw_note_count}`;
+      document.getElementById('resKey').textContent = data.key;
+      document.getElementById('resDegreeFlow').textContent = data.degree_sequence;
+      document.getElementById('resSolfaFlow').textContent = data.solfa_sequence;
+
+      const chordStream = document.getElementById('chordStream');
+      chordStream.innerHTML = '';
+      data.chord_progression.forEach((c, idx) => {
+        const card = document.createElement('div');
+        card.className = 'chord-card';
+        card.innerHTML = `
+          <div class="chord-degree">${c.degree}</div>
+          <div class="chord-name">${c.chord}</div>
+          <div class="chord-time">${c.start}s - ${c.end}s</div>
+        `;
+        card.onclick = () => {
+          document.querySelectorAll('.chord-card').forEach(el => el.classList.remove('selected'));
+          card.classList.add('selected');
+          document.getElementById('activeSelectionLabel').textContent = `Chord: ${c.chord} (Degree ${c.degree})`;
+          
+          const pc = c.chord.replace('m', '');
+          const isMin = c.chord.includes('m');
+          const rootIdx = PITCH_CLASSES.indexOf(pc);
+          if (rootIdx !== -1) {
+            const third = (rootIdx + (isMin ? 3 : 4)) % 12;
+            const fifth = (rootIdx + 7) % 12;
+            highlightMidi([48 + rootIdx, 48 + third, 48 + fifth]);
+          }
+        };
+        chordStream.appendChild(card);
+      });
+
+      const solfaStream = document.getElementById('solfaStream');
+      solfaStream.innerHTML = '';
+      data.melody_notes.forEach((m, idx) => {
+        const card = document.createElement('div');
+        card.className = 'solfa-card';
+        card.innerHTML = `
+          <div class="solfa-syllable">${m.solfa}</div>
+          <div class="solfa-note">${m.note}</div>
+          <div class="solfa-time">${m.start}s</div>
+        `;
+        card.onclick = () => {
+          document.querySelectorAll('.solfa-card').forEach(el => el.classList.remove('selected'));
+          card.classList.add('selected');
+          document.getElementById('activeSelectionLabel').textContent = `Melody Note: ${m.note} (${m.solfa})`;
+          highlightMidi([m.midi]);
+        };
+        solfaStream.appendChild(card);
+      });
+
+      setState('result');
+      
+      if (data.chord_progression.length > 0) {
+        chordStream.children[0].click();
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,19 +1,19 @@
 # DIRECTOR STATE: FASTKEYS
 
 ## 1. Authoritative Status
-**BUILDING — FRONTEND REBUILD COMPLETE / HUMAN VISUAL REVIEW PENDING**  
-*Completed musician-first frontend overhaul; visual inspection screenshots captured; regression test passed.*
+**BUILDING — PLAY-ALONG SYNCHRONIZATION COMPLETE / DIRECTOR & OWNER UAT PENDING**  
+*Integrated genuine browser audio playback, live timeline synchronization, movable-do solfa, Unicode degrees, and real-time transpose.*
 
 ---
 
 ## 2. Product Definition & Honest Supported Scope
-**FASTKEYS** is a visual emergency song-learning companion for keyboardists.  
-It turns supported songs with a clear melodic and harmonic structure into a keyboardist-ready visual play map containing:
+**FASTKEYS** is a visual emergency song-learning workspace for keyboardists.  
+It turns supported songs with a clear melodic and harmonic structure into an interactive, synchronized Play-Along workspace containing:
 - Detected musical key (e.g. `D Major`)
 - Chord progression over time (e.g. `D -> G -> Gm -> Bm -> D`)
-- Scale-degree numbers (Nashville/Roman numbers, e.g. `1 -> 4 -> 4 -> 6 -> 1`)
-- Main melody converted to tonic sol-fa (`do, re, mi, fa, so, la, ti`)
-- Visual keyboard highlighting chords and notes on click.
+- Scale-degree numbers with Unicode accidental symbols (e.g. `1 -> 5 -> 6m -> 4`, `♭6`, `♯4`)
+- Primary melody converted to key-aware movable-do tonic sol-fa (`d, r, m, f, s, l, t` with context alterations `di, ri, fi, si, li` or `ra, me, se, le, te`)
+- Visual 2-octave piano synchronized to audio playback with chord tones and melody notes highlighted in real time.
 
 ### Target Music & Supported Scope Boundary
 - **Supported Genres / Materials**: Songs with a clearly audible melodic and harmonic structure, including piano-led pieces, ballads, worship, gospel, pop, R&B, instrument-led songs, and hymns.
@@ -23,7 +23,7 @@ It turns supported songs with a clear melodic and harmonic structure into a keyb
 ---
 
 ## 3. Core Outcome
-> **FASTKEYS is only genuinely working when a normal user can upload an unfamiliar real song through the deployed product and receive a sufficiently accurate keyboardist-ready visual map of its key, chord progression and tonic-solfa melody, without developer intervention, such that the output can be checked against the actual music and used to begin playing it.**
+> **FASTKEYS is only genuinely working as a user experience when a keyboardist uploads a song, presses Play inside FASTKEYS, hears the actual uploaded song, and can follow the current scale degree, chord, tonic-solfa melody and keyboard notes as they automatically change in synchronization with the audio.**
 
 ---
 
@@ -87,6 +87,7 @@ Desktop skills located at `C:\Users\HomePC\Desktop\skill`:
 | Primary Melody Selection | Windowed vocal-register amplitude-pitch heuristic | Melody-forward lead line | Extract followable single lead line | Extracts clean diatonic sol-fa stream on piano ballad and lead instruments; fails on dense choir | **PARTIALLY PROVEN / SUPPORTED FOR CLEAR MELODY-FORWARD MATERIAL** |
 | Interactive Visual Keyboard | CSS/JS 2-Octave interactive piano | Diatonic & chromatic notes | Highlight active chord triad and melody notes | Clicking chords or notes highlights correct keys live | **PROVEN** |
 | End-to-End Vertical Slice | Browser Upload -> Live Server -> Real AI/DSP -> Visual Map | Supported audio formats | Working browser-to-result loop without mocks | Live HTTP test returns 200 with full payload; UI renders 4 states | **PROVEN LOCALLY** |
+| Play-Along Synchronization | Browser HTML5 Audio (`currentTime`) driving Chord, Degree, Sol-fa, and Piano highlights | Loaded audio blob URL | Real-time audio playback driving visual state changes without latency or clicks | Verified with automated CDP browser tests at t=0s, 2.5s, 5.0s, forward/backward seek, and transpose +2 | **PROVEN** |
 
 ---
 

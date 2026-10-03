@@ -1,8 +1,8 @@
 # DIRECTOR STATE: FASTKEYS
 
 ## 1. Authoritative Status
-**BUILDING — LOCAL PRODUCT LOOP PROVEN / PRODUCTION + BROAD SONG VALIDATION + HUMAN UAT PENDING**  
-*Step 1 (Broad Validation) & Step 3 (Stage Benchmark) complete. Step 6 (Security Audit) complete. Step 4 (Render Plan) corrected to `standard` (1c-2g).*
+**BUILDING — LOCAL PRODUCT LOOP PROVEN / PUBLIC DEPLOYMENT + SPONSOR PROOF + HUMAN UAT PENDING**  
+*Executing Priority 1 (Render), Priority 2 (Backboard), Priority 3 (Entire), and Priority 4 (ElevenLabs).*
 
 ---
 
@@ -38,12 +38,23 @@ Desktop skills located at `C:\Users\HomePC\Desktop\skill`:
 
 ---
 
-## 5. Sponsor & Track Decisions
-- **Event**: DEV "Hacktoberfest Weekend Challenge: Build for a Friend" (2026).
-- **Open-Source AI Component**: **Spotify Basic Pitch** (Apache 2.0). Neural network note extraction is load-bearing; without it, the system cannot detect polyphony.
-- **Gemma**: **DROPPED**.
-- **Render Track**: Eligible for **Best Use of Render ($200)** if and only if deployed on Render running the actual neural inference workload. Target compute plan is corrected to **`standard` / `1c-2g` (1 CPU / 2 GB RAM)** because the inference workload requires ~500-600 MB peak RAM.
-- **Money Boundary**: No credit card charged. Awaiting owner action for Render partner promo / deployment authorization.
+## 5. Sponsor Categories & Authoritative Ledger
+
+### Targeted Categories
+- **Overall Hackathon Prize**
+- **Best Use of Render ($200)**
+- **Best Use of Backboard ($200)**
+- **Best Use of Entire ($200)**
+- **Best Use of ElevenLabs ($200)**
+
+### Sponsor Claim Ledger
+
+| Sponsor / Category | Status | Pass Condition | Current Verification & Reality |
+|---|---|---|---|
+| **Render** | `TARGETED — NOT YET PROVEN` | Public Render deployment executes real Basic Pitch inference without OOM | `Dockerfile`, `render.yaml` configured on `standard` (`1c-2g`, 1 CPU / 2 GB RAM). Pending owner promo redemption at `hacktoberfest.com/my/promos` and service creation. |
+| **Backboard** | `TARGETED — NOT YET PROVEN` | Backboard R-CLI completes one genuine FASTKEYS engineering/verification task with reviewable evidence | Backboard R-CLI v3.0.5 installed (`~/.backboard/bin/backboard.exe`). Production smoke test suite (`test_production_smoke.py`) created, verifying `/api/health`, upload analysis schema, and temp file cleanup. CLI requires owner OAuth login (`backboard login`). |
+| **Entire** | `TARGETED — NOT YET PROVEN` | Entire captures/searches real FASTKEYS agent-session evidence used in DEV write-up | Entire CLI v0.11.3 installed (`~/.local/bin/entire.exe`). Enabled for project with `.entire/settings.json` and `.agents/hooks.json` tracking Antigravity agent. Commit evolution checkpoint preserved. |
+| **ElevenLabs** | `TARGETED — CREDIT CLAIMED / FINAL DEMO NARRATION PENDING` | Final submitted demo video genuinely uses ElevenLabs narration | Pipeline does not add decorative voice APIs. Account/credit allocated for demo walkthrough narration once UI and demo script are frozen after human UAT. |
 
 ---
 

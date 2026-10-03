@@ -1,0 +1,11 @@
+*.wav
+*.oga
+*.mp3
+*.flac
+*.ogg
+__pycache__/
+*.pyc
+.env
+.venv/
+node_modules/
+dist/

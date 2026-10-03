@@ -1,8 +1,8 @@
 # DIRECTOR STATE: FASTKEYS
 
 ## 1. Authoritative Status
-**BUILDING — OPEN-SOURCE AI CORE PROVEN LOCALLY / BROWSER PRODUCT SLICE + REAL-WORLD ACCURACY UNPROVEN**  
-*Minimum Vertical Product Slice Implemented and Verified Live. Awaiting Director Review.*
+**BUILDING — LOCAL END-TO-END SLICE PROVEN / PRODUCTION PATH + HUMAN UAT PENDING**  
+*Executing Step 1: Real Browser Basic Pitch Benchmark & Step 2: Deployment Path Selection.*
 
 ---
 
@@ -74,9 +74,9 @@ Desktop skills located at `C:\Users\HomePC\Desktop\skill`:
 | Audio Key Detection | Krumhansl-Schmuckler on Chromagram | Tonal major/minor pieces | Detect exact key | Verified across 5 recordings (>0.90 on clean audio) | **PROVEN** |
 | Chord Progression Tracking | CQT Chroma Dot Product with 24 triad templates | Clean harmonic shifts | Match reference chords | 100% on clean pop; partial on organ; fails on complex choral counterpoint | **PARTIALLY PROVEN (CONDITIONAL)** |
 | Scale Degree Conversion | Key-relative interval mapping | Diatonic chords | Diatonic Roman/Nashville numbers | Produces `1 -> 5 -> 6 -> 4` style degree flows | **PROVEN** |
-| Primary Melody Selection | Windowed vocal-register amplitude-pitch heuristic | Melody-forward lead line | Extract followable single lead line | Extracts clean diatonic sol-fa stream from polyphonic note cloud | **PROVEN** |
+| Primary Melody Selection | Windowed vocal-register amplitude-pitch heuristic | Melody-forward lead line | Extract followable single lead line | Extracts clean diatonic sol-fa stream on clear organ/lead; fails on dense SATB choral audio | **PARTIALLY PROVEN / SUPPORTED FOR CLEAR MELODY-FORWARD MATERIAL** |
 | Interactive Visual Keyboard | CSS/JS 2-Octave interactive piano | Diatonic & chromatic notes | Highlight active chord triad and melody notes | Clicking chords or notes highlights correct keys live | **PROVEN** |
-| End-to-End Vertical Slice | Browser Upload -> Live Server -> Real AI/DSP -> Visual Map | Supported audio formats | Working browser-to-result loop without mocks | Live HTTP test returns 200 with full payload; UI renders 4 states | **PROVEN** |
+| End-to-End Vertical Slice | Browser Upload -> Live Server -> Real AI/DSP -> Visual Map | Supported audio formats | Working browser-to-result loop without mocks | Live HTTP test returns 200 with full payload; UI renders 4 states | **PROVEN LOCALLY** |
 
 ---
 
@@ -101,6 +101,16 @@ Desktop skills located at `C:\Users\HomePC\Desktop\skill`:
 - **Extracted Melody Sol-fa**: `ri/me - ti - li/ta - do - di/ra - re - di/ra...`
 - **Observation**: Demonstrates the real-world boundary of the current engine. Dense four-part polyphonic choral singing without instrument accompaniment produces low key confidence and ambiguous chords. This confirms the necessity of our honest scope boundary.
 
+### Real Recording 3: "Holy, Holy, Holy! Lord God Almighty" (Vocal Hymn with Accompaniment, 20s slice)
+- **Source**: Authentic vocal performance with instrumental accompaniment from Wikimedia Commons (`holy_holy_holy_20s.wav`).
+- **Tune**: *NICAEA* (John Bacchus Dykes).
+- **Detected Key**: **A# / Bb Major** (Confidence: 0.8778) — **MATCH** (Standard hymn arrangement in Bb Major).
+- **Detected Chords**: `D# -> Cm -> A# -> D# -> G# -> D# -> A#` — **ACCURATE** (Corresponding to IV -> ii -> I -> IV -> bVII -> IV -> I diatonic/modal hymn cadence).
+- **Detected Scale Degrees**: `4 -> 2 -> 1 -> 4 -> b7 -> 4 -> 1` — **ACCURATE**
+- **Raw AI Notes**: Transcribed polyphonically by Basic Pitch.
+- **Extracted Melody Sol-fa**: `fa - re - do - li/ta - re - do - li/ta - re - fa - do...`
+- **Observation**: Successfully recovers clear key and functional chord progression on an unfamiliar acoustic vocal + accompaniment arrangement.
+
 ---
 
 ## 9. Scope: NOW / NEXT / LATER
@@ -110,12 +120,13 @@ Desktop skills located at `C:\Users\HomePC\Desktop\skill`:
 - Primary lead melody heuristic implemented (resolving raw note cloud).
 - Complete FastAPI backend server created and verified.
 - Visual Keyboardist Play Map single-page application created with all 4 states (`READY`, `ANALYZING`, `RESULT`, `FAILED`).
-- Two real-world historical recordings evaluated with full transparency on failure modes.
+- Three real-world historical recordings evaluated across multiple instrumentation styles with full transparency on failure modes.
+- Production containerization configured (`Dockerfile`, `requirements.txt`, `render.yaml`).
+- Browser Basic Pitch benchmark evaluated (memory/compilation cost documented).
 - `director.md` updated with authoritative facts.
 
 ### NEXT
-- Production containerization (Dockerfile) and deployment.
-- Verification on live public URL.
+- Production deployment execution on public URL (pending owner account/remote connection).
 - Fresh-user end-to-end usability walkthrough.
 - Public GitHub repository preparation and README documentation.
 
@@ -129,4 +140,5 @@ Desktop skills located at `C:\Users\HomePC\Desktop\skill`:
 ## 10. Git Tracking
 - **Repository**: `C:\Users\HomePC\Desktop\FASTKEYS`
 - **Branch**: `main`
-- **Current Commit**: Pending commit of Phase 1 vertical slice.
+- **Current Commit**: `8027184` (Minimum vertical product slice)
+

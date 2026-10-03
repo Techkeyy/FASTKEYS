@@ -76,5 +76,35 @@ class FastkeysProductionSmokeTest(unittest.TestCase):
         self.assertEqual(len(leaked_files), 0, f"Temporary audio files leaked in {temp_dir}: {leaked_files}")
         print("\n[SMOKE PASS] Temporary audio files cleanly unlinked and deleted in post-request finally block.")
 
+    def test_04_static_preset_samples_served_as_audio(self):
+        """Verifies that reference preset fixtures are served as genuine audio assets and not SPA fallback HTML."""
+        presets = [
+            "when_i_survey_20s.wav",
+            "fixture_pop_C.wav",
+            "fixture_lead_D.wav"
+        ]
+        for preset in presets:
+            url = f"{SERVER_URL}/samples/{preset}"
+            resp = requests.get(url, timeout=10)
+            self.assertEqual(resp.status_code, 200, f"Preset sample {preset} returned HTTP {resp.status_code}")
+            content_type = resp.headers.get("content-type", "").lower()
+            self.assertNotIn("text/html", content_type, f"Preset {preset} returned HTML instead of audio")
+            self.assertTrue(
+                "audio" in content_type or "octet-stream" in content_type,
+                f"Preset {preset} has invalid content-type: {content_type}"
+            )
+            self.assertGreater(
+                len(resp.content), 1000,
+                f"Preset sample {preset} size ({len(resp.content)} bytes) too small to be valid audio fixture"
+            )
+            print(f"\n[SMOKE PASS] Preset sample /samples/{preset} verified ({len(resp.content)} bytes, {content_type}).")
+
+        # Regression check: non-existent sample must NOT return valid audio
+        bad_url = f"{SERVER_URL}/samples/non_existent_preset.wav"
+        bad_resp = requests.get(bad_url, timeout=10)
+        # StaticFiles returns 404 for missing static assets under /samples/
+        self.assertIn(bad_resp.status_code, [404, 400], f"Expected 404 for missing preset, got {bad_resp.status_code}")
+        print(f"\n[SMOKE PASS] Non-existent preset correctly returned HTTP {bad_resp.status_code}.")
+
 if __name__ == "__main__":
     unittest.main()

@@ -136,4 +136,27 @@ wav_c = render(ev, 8.5)
 sf.write('fixture_pop_C.wav', wav_c, SR)
 print('wrote fixture_pop_C.wav')
 
+# ---------------- Case D: deterministic timing gate fixture ---------------
+# Four one-second chords with four precisely placed lead notes. This fixture
+# is the ground truth for separating model timing from browser timing.
+timing_chords = [
+    ([('C', 2), ('E', 2), ('G', 2)], 0.0, 1.0),
+    ([('F', 2), ('A', 2), ('C', 3)], 1.0, 1.0),
+    ([('G', 1), ('B', 1), ('D', 2)], 2.0, 1.0),
+    ([('C', 2), ('E', 2), ('G', 2)], 3.0, 1.0),
+]
+timing_melody = [
+    ('C', 4, 0.25, 0.50), ('F', 4, 1.25, 0.50),
+    ('G', 4, 2.25, 0.50), ('E', 4, 3.25, 0.50),
+]
+ev = []
+for chord, st, du in timing_chords:
+    for name, octv in chord:
+        ev.append(tone(N(name, octv), st, du, gain=0.18))
+for name, octv, st, du in timing_melody:
+    ev.append(tone(N(name, octv), st, du, gain=0.75))
+wav_timing = render(ev, 4.2)
+sf.write('timing_fixture_C.wav', wav_timing, SR)
+print('wrote timing_fixture_C.wav')
+
 print('fixtures done')

@@ -1,0 +1,582 @@
+{
+  "source": "timing_fixture_C.wav",
+  "base": "http://127.0.0.1:8012",
+  "duration": 4.2,
+  "backend": {
+    "key": "C Major",
+    "chords": [
+      {
+        "start": 0,
+        "end": 1,
+        "chord": "C",
+        "degree": "1",
+        "confidence": 0.967
+      },
+      {
+        "start": 1,
+        "end": 2,
+        "chord": "F",
+        "degree": "4",
+        "confidence": 0.947
+      },
+      {
+        "start": 2,
+        "end": 3,
+        "chord": "G",
+        "degree": "5",
+        "confidence": 0.955
+      },
+      {
+        "start": 3,
+        "end": 4.2,
+        "chord": "C",
+        "degree": "1",
+        "confidence": 0.945
+      }
+    ],
+    "melody": [
+      {
+        "start": 0.244,
+        "end": 0.789,
+        "midi": 60,
+        "amplitude": 0.802,
+        "note": "C4",
+        "solfa": "do"
+      },
+      {
+        "start": 1.242,
+        "end": 1.8,
+        "midi": 65,
+        "amplitude": 0.795,
+        "note": "F4",
+        "solfa": "fa"
+      },
+      {
+        "start": 2.254,
+        "end": 2.788,
+        "midi": 67,
+        "amplitude": 0.765,
+        "note": "G4",
+        "solfa": "so"
+      },
+      {
+        "start": 3.252,
+        "end": 3.798,
+        "midi": 64,
+        "amplitude": 0.755,
+        "note": "E4",
+        "solfa": "mi"
+      }
+    ],
+    "expectedMelody": [
+      {
+        "midi": 60,
+        "start": 0.25,
+        "end": 0.75
+      },
+      {
+        "midi": 65,
+        "start": 1.25,
+        "end": 1.75
+      },
+      {
+        "midi": 67,
+        "start": 2.25,
+        "end": 2.75
+      },
+      {
+        "midi": 64,
+        "start": 3.25,
+        "end": 3.75
+      }
+    ],
+    "expectedChordStarts": [
+      0,
+      1,
+      2,
+      3
+    ]
+  },
+  "traceEntries": 21,
+  "melodyTransitions": [
+    {
+      "index": 0,
+      "backend": {
+        "start": 0.244,
+        "end": 0.789,
+        "midi": 60,
+        "amplitude": 0.802,
+        "note": "C4",
+        "solfa": "do"
+      },
+      "entry": {
+        "performanceTime": 10467.599999999627,
+        "audioTime": 0.249357,
+        "chordIndex": 0,
+        "melodyIndex": 0,
+        "chordEvent": {
+          "start": 0,
+          "end": 1,
+          "chord": "C",
+          "degree": "1",
+          "confidence": 0.967
+        },
+        "melodyEvent": {
+          "start": 0.244,
+          "end": 0.789,
+          "midi": 60,
+          "amplitude": 0.802,
+          "note": "C4",
+          "solfa": "do"
+        },
+        "displayedChord": "C Major",
+        "displayedDegree": "1",
+        "displayedSolfa": "d",
+        "displayedNote": "C",
+        "highlightedPianoMidi": [
+          60
+        ],
+        "chordPianoMidi": [
+          48,
+          52,
+          55,
+          60,
+          64,
+          67,
+          72
+        ]
+      },
+      "latencyMs": 5.357000000000001
+    },
+    {
+      "index": 1,
+      "backend": {
+        "start": 1.242,
+        "end": 1.8,
+        "midi": 65,
+        "amplitude": 0.795,
+        "note": "F4",
+        "solfa": "fa"
+      },
+      "entry": {
+        "performanceTime": 11467,
+        "audioTime": 1.251063,
+        "chordIndex": 1,
+        "melodyIndex": 1,
+        "chordEvent": {
+          "start": 1,
+          "end": 2,
+          "chord": "F",
+          "degree": "4",
+          "confidence": 0.947
+        },
+        "melodyEvent": {
+          "start": 1.242,
+          "end": 1.8,
+          "midi": 65,
+          "amplitude": 0.795,
+          "note": "F4",
+          "solfa": "fa"
+        },
+        "displayedChord": "F Major",
+        "displayedDegree": "4",
+        "displayedSolfa": "f",
+        "displayedNote": "F",
+        "highlightedPianoMidi": [
+          65
+        ],
+        "chordPianoMidi": [
+          48,
+          53,
+          57,
+          60,
+          65,
+          69,
+          72
+        ]
+      },
+      "latencyMs": 9.063000000000043
+    },
+    {
+      "index": 2,
+      "backend": {
+        "start": 2.254,
+        "end": 2.788,
+        "midi": 67,
+        "amplitude": 0.765,
+        "note": "G4",
+        "solfa": "so"
+      },
+      "entry": {
+        "performanceTime": 12479.5,
+        "audioTime": 2.257538,
+        "chordIndex": 2,
+        "melodyIndex": 2,
+        "chordEvent": {
+          "start": 2,
+          "end": 3,
+          "chord": "G",
+          "degree": "5",
+          "confidence": 0.955
+        },
+        "melodyEvent": {
+          "start": 2.254,
+          "end": 2.788,
+          "midi": 67,
+          "amplitude": 0.765,
+          "note": "G4",
+          "solfa": "so"
+        },
+        "displayedChord": "G Major",
+        "displayedDegree": "5",
+        "displayedSolfa": "s",
+        "displayedNote": "G",
+        "highlightedPianoMidi": [
+          67
+        ],
+        "chordPianoMidi": [
+          50,
+          55,
+          59,
+          62,
+          67,
+          71
+        ]
+      },
+      "latencyMs": 3.537999999999819
+    },
+    {
+      "index": 3,
+      "backend": {
+        "start": 3.252,
+        "end": 3.798,
+        "midi": 64,
+        "amplitude": 0.755,
+        "note": "E4",
+        "solfa": "mi"
+      },
+      "entry": {
+        "performanceTime": 13475.699999999255,
+        "audioTime": 3.255977,
+        "chordIndex": 3,
+        "melodyIndex": 3,
+        "chordEvent": {
+          "start": 3,
+          "end": 4.2,
+          "chord": "C",
+          "degree": "1",
+          "confidence": 0.945
+        },
+        "melodyEvent": {
+          "start": 3.252,
+          "end": 3.798,
+          "midi": 64,
+          "amplitude": 0.755,
+          "note": "E4",
+          "solfa": "mi"
+        },
+        "displayedChord": "C Major",
+        "displayedDegree": "1",
+        "displayedSolfa": "m",
+        "displayedNote": "E",
+        "highlightedPianoMidi": [
+          64
+        ],
+        "chordPianoMidi": [
+          48,
+          52,
+          55,
+          60,
+          64,
+          67,
+          72
+        ]
+      },
+      "latencyMs": 3.9770000000003414
+    }
+  ],
+  "chordTransitions": [
+    {
+      "index": 0,
+      "backend": {
+        "start": 0,
+        "end": 1,
+        "chord": "C",
+        "degree": "1",
+        "confidence": 0.967
+      },
+      "entry": {
+        "performanceTime": 9829.799999999814,
+        "audioTime": 0,
+        "chordIndex": 0,
+        "melodyIndex": -1,
+        "chordEvent": {
+          "start": 0,
+          "end": 1,
+          "chord": "C",
+          "degree": "1",
+          "confidence": 0.967
+        },
+        "melodyEvent": null,
+        "displayedChord": "C Major",
+        "displayedDegree": "1",
+        "displayedSolfa": "·",
+        "displayedNote": "Rest",
+        "highlightedPianoMidi": [],
+        "chordPianoMidi": [
+          48,
+          52,
+          55,
+          60,
+          64,
+          67,
+          72
+        ]
+      },
+      "latencyMs": 0
+    },
+    {
+      "index": 1,
+      "backend": {
+        "start": 1,
+        "end": 2,
+        "chord": "F",
+        "degree": "4",
+        "confidence": 0.947
+      },
+      "entry": {
+        "performanceTime": 11235.299999999814,
+        "audioTime": 1.003105,
+        "chordIndex": 1,
+        "melodyIndex": -1,
+        "chordEvent": {
+          "start": 1,
+          "end": 2,
+          "chord": "F",
+          "degree": "4",
+          "confidence": 0.947
+        },
+        "melodyEvent": null,
+        "displayedChord": "F Major",
+        "displayedDegree": "4",
+        "displayedSolfa": "·",
+        "displayedNote": "Rest",
+        "highlightedPianoMidi": [],
+        "chordPianoMidi": [
+          48,
+          53,
+          57,
+          60,
+          65,
+          69,
+          72
+        ]
+      },
+      "latencyMs": 3.1049999999999134
+    },
+    {
+      "index": 2,
+      "backend": {
+        "start": 2,
+        "end": 3,
+        "chord": "G",
+        "degree": "5",
+        "confidence": 0.955
+      },
+      "entry": {
+        "performanceTime": 12220.799999999814,
+        "audioTime": 2.000786,
+        "chordIndex": 2,
+        "melodyIndex": -1,
+        "chordEvent": {
+          "start": 2,
+          "end": 3,
+          "chord": "G",
+          "degree": "5",
+          "confidence": 0.955
+        },
+        "melodyEvent": null,
+        "displayedChord": "G Major",
+        "displayedDegree": "5",
+        "displayedSolfa": "·",
+        "displayedNote": "Rest",
+        "highlightedPianoMidi": [],
+        "chordPianoMidi": [
+          50,
+          55,
+          59,
+          62,
+          67,
+          71
+        ]
+      },
+      "latencyMs": 0.7860000000001754
+    },
+    {
+      "index": 3,
+      "backend": {
+        "start": 3,
+        "end": 4.2,
+        "chord": "C",
+        "degree": "1",
+        "confidence": 0.945
+      },
+      "entry": {
+        "performanceTime": 13235,
+        "audioTime": 3.000025,
+        "chordIndex": 3,
+        "melodyIndex": -1,
+        "chordEvent": {
+          "start": 3,
+          "end": 4.2,
+          "chord": "C",
+          "degree": "1",
+          "confidence": 0.945
+        },
+        "melodyEvent": null,
+        "displayedChord": "C Major",
+        "displayedDegree": "1",
+        "displayedSolfa": "·",
+        "displayedNote": "Rest",
+        "highlightedPianoMidi": [],
+        "chordPianoMidi": [
+          48,
+          52,
+          55,
+          60,
+          64,
+          67,
+          72
+        ]
+      },
+      "latencyMs": 0.024999999999941735
+    }
+  ],
+  "renderLatencyMs": {
+    "mean": 3.2313750000000296,
+    "max": 9.063000000000043
+  },
+  "invariantChecks": [
+    {
+      "audioTime": 0,
+      "melodyIndex": -1,
+      "passed": true
+    },
+    {
+      "audioTime": 0,
+      "melodyIndex": -1,
+      "passed": true
+    },
+    {
+      "audioTime": 0,
+      "melodyIndex": -1,
+      "passed": true
+    },
+    {
+      "audioTime": 0,
+      "melodyIndex": -1,
+      "passed": true
+    },
+    {
+      "audioTime": 0,
+      "melodyIndex": -1,
+      "passed": true
+    },
+    {
+      "audioTime": 0,
+      "melodyIndex": -1,
+      "passed": true
+    },
+    {
+      "audioTime": 0,
+      "melodyIndex": -1,
+      "passed": true
+    },
+    {
+      "audioTime": 0.249357,
+      "melodyIndex": 0,
+      "passed": true
+    },
+    {
+      "audioTime": 0.799772,
+      "melodyIndex": -1,
+      "passed": true
+    },
+    {
+      "audioTime": 1.003105,
+      "melodyIndex": -1,
+      "passed": true
+    },
+    {
+      "audioTime": 1.251063,
+      "melodyIndex": 1,
+      "passed": true
+    },
+    {
+      "audioTime": 1.810077,
+      "melodyIndex": -1,
+      "passed": true
+    },
+    {
+      "audioTime": 2.000786,
+      "melodyIndex": -1,
+      "passed": true
+    },
+    {
+      "audioTime": 2.257538,
+      "melodyIndex": 2,
+      "passed": true
+    },
+    {
+      "audioTime": 2.788793,
+      "melodyIndex": -1,
+      "passed": true
+    },
+    {
+      "audioTime": 3.000025,
+      "melodyIndex": -1,
+      "passed": true
+    },
+    {
+      "audioTime": 3.255977,
+      "melodyIndex": 3,
+      "passed": true
+    },
+    {
+      "audioTime": 3.803966,
+      "melodyIndex": -1,
+      "passed": true
+    },
+    {
+      "audioTime": 0,
+      "melodyIndex": -1,
+      "passed": true
+    },
+    {
+      "audioTime": 0,
+      "melodyIndex": -1,
+      "passed": true
+    },
+    {
+      "audioTime": 0,
+      "melodyIndex": -1,
+      "passed": true
+    }
+  ],
+  "restState": {
+    "time": 0.9,
+    "solfa": "·",
+    "note": "Rest",
+    "melodyKeys": [],
+    "chordKeys": [
+      48,
+      52,
+      55,
+      60,
+      64,
+      67,
+      72
+    ]
+  },
+  "errors": []
+}

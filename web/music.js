@@ -64,13 +64,23 @@
     }
     return {solfa:solfa||sounding, note:sounding, midi:note.midi+offset, relative:!!solfa};
   }
+  function findEventIndex(events,time,duration=0,includeFinal=false) {
+    let low=0,high=events.length-1,candidate=-1;
+    while(low<=high){
+      const middle=(low+high)>>1;
+      if(time>=events[middle].start){candidate=middle;low=middle+1;}
+      else high=middle-1;
+    }
+    if(candidate<0)return -1;
+    const event=events[candidate],last=candidate===events.length-1;
+    return time<event.end||(includeFinal&&last&&time<=duration)?candidate:-1;
+  }
   function moment(data,time,offset=0) {
-    const lastChord=data.chord_progression.length-1;
-    const chordIndex=data.chord_progression.findIndex((e,index)=>time>=e.start && (time<e.end || (index===lastChord && time<=data.duration)));
-    const melodyIndex=data.melody_notes.findIndex(e=>time>=e.start && time<e.end);
+    const chordIndex=findEventIndex(data.chord_progression,time,data.duration,true);
+    const melodyIndex=findEventIndex(data.melody_notes,time,0,false);
     return {chordIndex,melodyIndex,chord:chordIndex<0?null:chord(data.chord_progression[chordIndex],data.key,offset),melody:melodyIndex<0?null:melody(data.melody_notes,melodyIndex,data.key,offset)};
   }
-  const api={mod,pc,keyInfo,spell,degree,chord,melody,moment};
+  const api={mod,pc,keyInfo,spell,degree,chord,melody,findEventIndex,moment};
   if (typeof module !== 'undefined') module.exports=api;
   root.FastkeysMusic=api;
 })(globalThis);

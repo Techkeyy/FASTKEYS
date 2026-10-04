@@ -6,7 +6,7 @@
   const time=n=>`${Math.floor((Number.isFinite(n)?n:0)/60)}:${String(Math.floor((Number.isFinite(n)?n:0)%60)).padStart(2,'0')}`;
   const duration=()=>Number.isFinite(audio.duration)?audio.duration:song?.duration||0;
   function screen(name){currentScreen=name;for(const n of ['Import','Analyzing','Failed','Workspace'])$('screen'+n).hidden=n.toLowerCase()!==name;window.scrollTo(0,0);}
-  function reset(){generation++;request?.abort();request=null;audio.pause();audio.removeAttribute('src');audio.load();if(objectUrl)URL.revokeObjectURL(objectUrl);objectUrl=null;song=null;transpose=0;lastSignature='';$('audioFileInput').value='';$('playbackNotice').textContent='';screen('import');}
+  function reset(){generation++;request?.abort();request=null;cancelAnimationFrame(frame);frame=0;audio.pause();audio.removeAttribute('src');audio.load();if(objectUrl)URL.revokeObjectURL(objectUrl);objectUrl=null;song=null;transpose=0;lastSignature='';$('audioFileInput').value='';$('playbackNotice').textContent='';screen('import');}
   function fail(message){$('failedReasonText').textContent=message;screen('failed');}
   function sync(force=false){
     if(!song)return;
@@ -33,6 +33,20 @@
       key.classList.toggle('active-chord',chord);key.classList.toggle('active-melody',melody);
       const label=M.spell(midi,M.keyInfo(song.key,transpose));key.textContent=label;
       key.setAttribute('aria-label',`${label}${Math.floor(midi/12)-1}${chord?', chord tone':''}${melody?', melody':''}`);
+    }
+    if(window.__FASTKEYS_TIMING_TRACE__){
+      const trace=window.__fastkeysTimingTrace||(window.__fastkeysTimingTrace=[]);
+      trace.push({
+        performanceTime:performance.now(),audioTime:t,
+        chordIndex:state.chordIndex,melodyIndex:state.melodyIndex,
+        chordEvent:state.chordIndex<0?null:{...song.chord_progression[state.chordIndex]},
+        melodyEvent:state.melodyIndex<0?null:{...song.melody_notes[state.melodyIndex]},
+        displayedChord:$('currentChord').textContent,displayedDegree:$('currentDegree').textContent,
+        displayedSolfa:$('currentSolfa').textContent,displayedNote:$('currentNote').textContent,
+        highlightedPianoMidi:[...$('pianoKeysBed').children].filter(key=>key.classList.contains('active-melody')).map(key=>Number(key.dataset.midi)),
+        chordPianoMidi:[...$('pianoKeysBed').children].filter(key=>key.classList.contains('active-chord')).map(key=>Number(key.dataset.midi))
+      });
+      if(trace.length>5000)trace.splice(0,trace.length-5000);
     }
   }
   function seek(t){if(!song)return;audio.currentTime=Math.max(0,Math.min(duration(),t));sync(true);}
@@ -87,9 +101,11 @@
   $('btnTryAnother').onclick=()=>{reset();$('audioFileInput').click();};
   const drop=$('importDropZone');drop.ondragover=e=>{e.preventDefault();drop.classList.add('dragover');};drop.ondragleave=()=>drop.classList.remove('dragover');drop.ondrop=e=>{e.preventDefault();drop.classList.remove('dragover');if(e.dataTransfer.files[0])begin(e.dataTransfer.files[0]);};
   $('btnPlayPause').onclick=toggle;$('btnRestart').onclick=()=>seek(0);$('btnSeekBack').onclick=()=>seek(audio.currentTime-5);$('btnSeekForward').onclick=()=>seek(audio.currentTime+5);$('timelineTrack').oninput=e=>seek(Number(e.target.value));$('btnTransposeDown').onclick=()=>transposition(transpose-1);$('btnTransposeUp').onclick=()=>transposition(transpose+1);
-  for(const event of ['timeupdate','seeking','seeked','loadedmetadata','durationchange'])audio.addEventListener(event,()=>sync());
+  for(const event of ['seeking','seeked','loadedmetadata','durationchange'])audio.addEventListener(event,()=>sync(true));
   for(const event of ['play','pause','ended'])audio.addEventListener(event,playState);
   audio.addEventListener('error',()=>{if(song)$('playbackNotice').textContent='Your browser cannot play this recording. Try an MP3 or WAV version.';});
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden){sync(true);if(!audio.paused&&!audio.ended){cancelAnimationFrame(frame);frame=requestAnimationFrame(tick);}}});
+  window.addEventListener('pageshow',()=>sync(true));
   window.addEventListener('keydown',event=>{if(currentScreen!=='workspace'||/INPUT|BUTTON|TEXTAREA|SELECT/.test(event.target.tagName)||event.target.isContentEditable)return;if(event.code==='Space'){event.preventDefault();toggle();}if(event.code==='ArrowLeft'){event.preventDefault();seek(audio.currentTime-5);}if(event.code==='ArrowRight'){event.preventDefault();seek(audio.currentTime+5);}});
   const revealObserver='IntersectionObserver' in window?new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');revealObserver.unobserve(entry.target);}}),{threshold:.14,rootMargin:'0px 0px -7%'}):null;
   document.querySelectorAll('[data-reveal],.reveal').forEach(element=>revealObserver?revealObserver.observe(element):element.classList.add('is-visible'));

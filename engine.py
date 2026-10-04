@@ -199,6 +199,100 @@ def _transcribe_basic_pitch(audio_path, y, sr, duration):
 
     return merge_overlapping_notes(events), chunk_count, time.perf_counter() - started, peak_memory_mb
 
+
+def _melody_candidate_score(note, previous=None):
+    """Score a Basic Pitch note as a possible lead-melody event.
+
+    Amplitude is useful, but it is deliberately balanced with lead register,
+    duration and continuity so the selector does not simply choose the
+    highest or loudest harmonic at every instant.
+    """
+    midi = int(note['midi'])
+    amplitude = float(note['amplitude'])
+    duration = max(0.0, float(note['end']) - float(note['start']))
+    register = 1.0 if 55 <= midi <= 72 else 0.38
+    high_harmonic_penalty = 0.55 if midi > 72 else 0.0
+    low_register_penalty = 0.35 if midi < 55 else 0.0
+    score = amplitude * 2.8 + register * 0.35 + min(duration / 0.7, 1.0) * 0.2
+    score -= high_harmonic_penalty + low_register_penalty
+    if previous is not None:
+        distance = abs(midi - int(previous['midi']))
+        score += 0.45 * np.exp(-distance / 12.0)
+        if distance > 12:
+            score -= 0.45
+    return float(score)
+
+
+def select_melody_events(note_events, root_pitch_idx, duration):
+    """Select one coherent melody while preserving Basic Pitch timing.
+
+    Candidate onsets are clustered only when Basic Pitch emits near-identical
+    simultaneous alternatives. One candidate is selected per onset cluster;
+    its original onset and offset are retained. Small overlaps are clipped at
+    the next selected onset so the returned stream remains monophonic without
+    inventing timing or notes during rests.
+    """
+    candidates = []
+    for event in note_events:
+        start = max(0.0, float(event['start']))
+        end = min(float(duration), float(event['end']))
+        midi = int(event['midi'])
+        amplitude = float(event['amplitude'])
+        if end <= start or end - start < 0.08:
+            continue
+        if not 48 <= midi <= 84 or amplitude < 0.25:
+            continue
+        if midi > 72 and end - start < 0.25 and amplitude < 0.4:
+            continue
+        candidates.append({
+            'start': start,
+            'end': end,
+            'midi': midi,
+            'amplitude': amplitude,
+            'note': midi_to_note_clean(midi),
+            'solfa': SOLFA_MAP.get((midi % 12 - root_pitch_idx) % 12, '?'),
+        })
+    candidates.sort(key=lambda event: (event['start'], event['end'], -event['amplitude']))
+
+    groups = []
+    for candidate in candidates:
+        if not groups or candidate['start'] - groups[-1][0]['start'] > 0.08:
+            groups.append([candidate])
+        else:
+            groups[-1].append(candidate)
+
+    selected = []
+    for group in groups:
+        previous = selected[-1] if selected else None
+        candidate = max(group, key=lambda event: _melody_candidate_score(event, previous))
+        if previous is not None:
+            if candidate['midi'] == previous['midi'] and candidate['start'] <= previous['end'] + 0.08:
+                previous['end'] = max(previous['end'], candidate['end'])
+                previous['amplitude'] = max(previous['amplitude'], candidate['amplitude'])
+                continue
+            if candidate['start'] < previous['end']:
+                overlap = previous['end'] - candidate['start']
+                if overlap > 0.05:
+                    prior = selected[-2] if len(selected) > 1 else None
+                    if _melody_candidate_score(candidate, prior) <= _melody_candidate_score(previous, prior) + 0.02:
+                        continue
+                previous['end'] = candidate['start']
+                if previous['end'] - previous['start'] < 0.30:
+                    selected.pop()
+                    previous = selected[-1] if selected else None
+        selected.append(candidate)
+
+    return [
+        {
+            **event,
+            'start': round(event['start'], 3),
+            'end': round(event['end'], 3),
+            'amplitude': round(event['amplitude'], 3),
+        }
+        for event in selected
+        if event['end'] - event['start'] >= 0.12
+    ]
+
 def analyze_audio_file(audio_path: str):
     """
     Executes full FASTKEYS analysis: DSP Key + Chords + Basic Pitch AI notes + Melody Extraction.
@@ -239,7 +333,9 @@ def analyze_audio_file(audio_path: str):
 
     # 2. Windowed Chord Progression
     hop_length = 512
-    chunk_duration = 1.5
+    # One-second chroma windows keep controlled chord transitions within the
+    # release gate's 150–250ms boundary target without moving identities.
+    chunk_duration = 1.0
     frames_per_chunk = int(chunk_duration / (hop_length / sr))
     raw_chords = []
     
@@ -307,53 +403,15 @@ def analyze_audio_file(audio_path: str):
             'solfa': solfa
         })
 
-    # 4. Primary Lead Melody Selection Heuristic
-    # Basic Pitch returns simultaneous chord/harmony notes and overtone harmonics.
-    # To construct a clean lead melody line:
-    # A. Window time into 250ms chunks (or note-onset clusters).
-    # B. Filter for plausible vocal/lead keyboard register (MIDI 48 / C3 to MIDI 84 / C6).
-    # C. In each active window, select the dominant lead note (highest pitch in vocal range or highest velocity).
-    # D. Deduplicate and filter fleeting artifacts (< 120ms).
-    
-    vocal_notes = [n for n in all_ai_notes if 48 <= n['midi'] <= 84 and n['amplitude'] >= 0.35]
-    vocal_notes.sort(key=lambda x: x['start'])
-    
-    lead_melody = []
-    time_cursor = 0.0
-    step = 0.25 # 250ms time window
-    
-    while time_cursor < duration:
-        window_end = min(time_cursor + step, duration)
-        candidates = [
-            n for n in vocal_notes
-            if max(n['start'], time_cursor) < min(n['end'], window_end)
-        ]
-        if candidates:
-            # Score candidates: higher pitch weighted slightly for melody dominance, combined with amplitude
-            best_candidate = max(candidates, key=lambda x: (x['amplitude'] * 0.7 + (x['midi'] / 127.0) * 0.3))
-            
-            # Check if this continues the previous note
-            if not lead_melody or lead_melody[-1]['midi'] != best_candidate['midi']:
-                lead_melody.append({
-                    'start': round(time_cursor, 2),
-                    'end': round(window_end, 2),
-                    'midi': best_candidate['midi'],
-                    'note': best_candidate['note'],
-                    'solfa': best_candidate['solfa'],
-                    'amplitude': best_candidate['amplitude']
-                })
-            else:
-                lead_melody[-1]['end'] = round(window_end, 2)
-        time_cursor += step
-
-    # Filter out isolated short spikes (< 150ms)
-    clean_melody = [n for n in lead_melody if (n['end'] - n['start']) >= 0.20]
+    # 4. Primary Lead Melody Selection. Basic Pitch timing is retained; only
+    # near-simultaneous alternatives are clustered and scored.
+    clean_melody = select_melody_events(note_events, root_pitch_idx, duration)
 
     # Combine degree sequence summary
     degree_sequence = " -> ".join([c['degree'] for c in merged_chords[:12]])
     solfa_sequence = " - ".join([m['solfa'] for m in clean_melody[:16]])
 
-    return {
+    result = {
         'filename': os.path.basename(audio_path),
         'duration': round(duration, 2),
         'key': clean_txt(detected_key),
@@ -375,6 +433,17 @@ def analyze_audio_file(audio_path: str):
         'analysis_seconds': round(time.perf_counter() - analysis_started, 3),
         'peak_memory_mb': round(peak_memory_mb, 2) if peak_memory_mb is not None else None,
     }
+    if os.environ.get('FASTKEYS_TIMING_TRACE') == '1':
+        result['raw_note_events'] = [
+            {
+                'start': round(float(event['start']), 3),
+                'end': round(float(event['end']), 3),
+                'midi': int(event['midi']),
+                'amplitude': round(float(event['amplitude']), 3),
+            }
+            for event in note_events
+        ]
+    return result
 
 if __name__ == '__main__':
     test_file = r'c:\Users\HomePC\Desktop\FASTKEYS\nearer_my_god_30s.wav'

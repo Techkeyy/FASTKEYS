@@ -8,11 +8,11 @@
     "scroll": 320
   },
   "audio": {
-    "rms": 0.2271686347559608,
+    "rms": 0.2248493893827095,
     "muted": false,
     "volume": 1,
     "context": "running",
-    "time": 0.516644
+    "time": 0.513509
   },
   "error": "Analysis could not finish. Please try again in a moment.",
   "unsupported": "Choose an MP3, WAV, FLAC or OGG audio file.",

@@ -48,3 +48,9 @@ test('full-duration chord coverage stays active at the final song timestamp whil
  const data={duration:180,key:'C Major',chord_progression:[{chord:'C',start:0,end:90},{chord:'G',start:90,end:180}],melody_notes:[{midi:60,start:10,end:11}]};
  assert.equal(M.moment(data,179.99).chord.name,'G');assert.equal(M.moment(data,180).chord.name,'G');assert.equal(M.moment(data,179.99).melody,null);
 });
+test('event lookup switches exactly at boundaries and preserves rests',()=>{
+ const events=[{start:0,end:1},{start:1,end:2},{start:3,end:4}];
+ assert.equal(M.findEventIndex(events,0),0);assert.equal(M.findEventIndex(events,.999),0);
+ assert.equal(M.findEventIndex(events,1),1);assert.equal(M.findEventIndex(events,2),-1);
+ assert.equal(M.findEventIndex(events,3),2);assert.equal(M.findEventIndex(events,4),-1);
+});

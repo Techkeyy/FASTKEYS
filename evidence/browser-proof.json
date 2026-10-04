@@ -1,0 +1,331 @@
+{
+  "fullBleed": {
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 1000,
+      "top": 0,
+      "right": 1440,
+      "bottom": 1000,
+      "left": 0
+    },
+    "background": "url(\"http://127.0.0.1:8012/hero.jpg\")",
+    "size": "cover",
+    "position": "fixed",
+    "viewport": [
+      1440,
+      1000
+    ]
+  },
+  "before": {
+    "time": 0,
+    "paused": true,
+    "src": "blob:http://127.0.0.1:8012/3841221e-a209-47da-bc92-fe179d9f5b42",
+    "ready": 4,
+    "degree": "1",
+    "chord": "C Major",
+    "solfa": "m",
+    "note": "E",
+    "chordKeys": [
+      48,
+      52,
+      55,
+      60,
+      64,
+      67,
+      72
+    ],
+    "melodyKeys": [
+      64
+    ],
+    "activeChord": "chord-item-0",
+    "activeSolfa": "solfa-item-0"
+  },
+  "play1": {
+    "time": 1.223343,
+    "paused": false,
+    "src": "blob:http://127.0.0.1:8012/3841221e-a209-47da-bc92-fe179d9f5b42",
+    "ready": 4,
+    "degree": "1",
+    "chord": "C Major",
+    "solfa": "d",
+    "note": "C",
+    "chordKeys": [
+      48,
+      52,
+      55,
+      60,
+      64,
+      67,
+      72
+    ],
+    "melodyKeys": [
+      60
+    ],
+    "activeChord": "chord-item-0",
+    "activeSolfa": "solfa-item-2"
+  },
+  "play2": {
+    "time": 3.943582,
+    "paused": false,
+    "src": "blob:http://127.0.0.1:8012/3841221e-a209-47da-bc92-fe179d9f5b42",
+    "ready": 4,
+    "degree": "5",
+    "chord": "G Major",
+    "solfa": "d",
+    "note": "C",
+    "chordKeys": [
+      50,
+      55,
+      59,
+      62,
+      67,
+      71
+    ],
+    "melodyKeys": [
+      60
+    ],
+    "activeChord": "chord-item-1",
+    "activeSolfa": "solfa-item-7"
+  },
+  "seek1": {
+    "time": 1,
+    "paused": true,
+    "src": "blob:http://127.0.0.1:8012/3841221e-a209-47da-bc92-fe179d9f5b42",
+    "ready": 4,
+    "degree": "1",
+    "chord": "C Major",
+    "solfa": "d",
+    "note": "C",
+    "chordKeys": [
+      48,
+      52,
+      55,
+      60,
+      64,
+      67,
+      72
+    ],
+    "melodyKeys": [
+      60
+    ],
+    "activeChord": "chord-item-0",
+    "activeSolfa": "solfa-item-2"
+  },
+  "seek3": {
+    "time": 3,
+    "paused": true,
+    "src": "blob:http://127.0.0.1:8012/3841221e-a209-47da-bc92-fe179d9f5b42",
+    "ready": 4,
+    "degree": "5",
+    "chord": "G Major",
+    "solfa": "r",
+    "note": "D",
+    "chordKeys": [
+      50,
+      55,
+      59,
+      62,
+      67,
+      71
+    ],
+    "melodyKeys": [
+      62
+    ],
+    "activeChord": "chord-item-1",
+    "activeSolfa": "solfa-item-6"
+  },
+  "seek6": {
+    "time": 6,
+    "paused": true,
+    "src": "blob:http://127.0.0.1:8012/3841221e-a209-47da-bc92-fe179d9f5b42",
+    "ready": 4,
+    "degree": "4",
+    "chord": "F Major",
+    "solfa": "l",
+    "note": "A",
+    "chordKeys": [
+      48,
+      53,
+      57,
+      60,
+      65,
+      69,
+      72
+    ],
+    "melodyKeys": [
+      57
+    ],
+    "activeChord": "chord-item-3",
+    "activeSolfa": "solfa-item-10"
+  },
+  "transposeBefore": {
+    "time": 0,
+    "paused": true,
+    "src": "blob:http://127.0.0.1:8012/08b8af33-a5c4-4014-935f-c4d48e9eaa48",
+    "ready": 4,
+    "degree": "1",
+    "chord": "C Major",
+    "solfa": "l",
+    "note": "A",
+    "chordKeys": [
+      48,
+      52,
+      55,
+      60,
+      64,
+      67,
+      72
+    ],
+    "melodyKeys": [
+      69
+    ],
+    "activeChord": "chord-item-0",
+    "activeSolfa": "solfa-item-0"
+  },
+  "transposeAfter": {
+    "time": 0,
+    "paused": true,
+    "src": "blob:http://127.0.0.1:8012/08b8af33-a5c4-4014-935f-c4d48e9eaa48",
+    "ready": 4,
+    "degree": "1",
+    "chord": "D Major",
+    "solfa": "l",
+    "note": "B",
+    "chordKeys": [
+      50,
+      54,
+      57,
+      62,
+      66,
+      69
+    ],
+    "melodyKeys": [
+      71
+    ],
+    "activeChord": "chord-item-0",
+    "activeSolfa": "solfa-item-0"
+  },
+  "minor": {
+    "key": "E Minor",
+    "chords": [
+      "E",
+      "Am",
+      "E",
+      "Am",
+      "E",
+      "Am",
+      "E",
+      "Am",
+      "E",
+      "Am",
+      "E",
+      "Am",
+      "E",
+      "C",
+      "G",
+      "Am",
+      "E",
+      "B",
+      "Am",
+      "E",
+      "Am",
+      "E",
+      "Am",
+      "C",
+      "G",
+      "Am",
+      "E",
+      "Am",
+      "E",
+      "Am",
+      "E",
+      "Am",
+      "F",
+      "A#",
+      "F",
+      "Am",
+      "C",
+      "E",
+      "D#",
+      "Am",
+      "E",
+      "Am",
+      "E",
+      "Am",
+      "C",
+      "G",
+      "E",
+      "Am",
+      "E",
+      "Am",
+      "E",
+      "A",
+      "Dm",
+      "Am",
+      "Dm",
+      "Am",
+      "A",
+      "Dm",
+      "A#",
+      "F",
+      "E",
+      "Am",
+      "Em",
+      "Am",
+      "E",
+      "Am",
+      "E",
+      "C",
+      "E",
+      "D#",
+      "Am",
+      "E",
+      "Am",
+      "E",
+      "Am",
+      "A"
+    ],
+    "solfa": [
+      "d",
+      "t",
+      "s",
+      "te",
+      "f",
+      "G#",
+      "le",
+      "me",
+      "ra",
+      "F",
+      "A#",
+      "se",
+      "l"
+    ],
+    "playing": {
+      "time": 2.791253,
+      "paused": false,
+      "src": "blob:http://127.0.0.1:8012/ebd28772-8f35-42b3-a1b1-ef114b65232a",
+      "ready": 4,
+      "degree": "4m",
+      "chord": "A Minor",
+      "solfa": "d",
+      "note": "E",
+      "chordKeys": [
+        48,
+        52,
+        57,
+        60,
+        64,
+        69,
+        72
+      ],
+      "melodyKeys": [
+        52
+      ],
+      "activeChord": "chord-item-1",
+      "activeSolfa": "solfa-item-6"
+    }
+  },
+  "errors": []
+}

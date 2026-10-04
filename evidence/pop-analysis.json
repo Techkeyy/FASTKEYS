@@ -1,0 +1,156 @@
+{
+  "filename": "fixture_pop_C.wav",
+  "duration": 8.5,
+  "key": "C Major",
+  "key_confidence": 0.918,
+  "chord_progression": [
+    {
+      "start": 0,
+      "end": 1.49,
+      "chord": "C",
+      "degree": "1",
+      "confidence": 0.912
+    },
+    {
+      "start": 1.49,
+      "end": 4.46,
+      "chord": "G",
+      "degree": "5",
+      "confidence": 0.851
+    },
+    {
+      "start": 4.46,
+      "end": 5.94,
+      "chord": "Am",
+      "degree": "6",
+      "confidence": 0.941
+    },
+    {
+      "start": 5.94,
+      "end": 8.5,
+      "chord": "F",
+      "degree": "4",
+      "confidence": 0.91
+    }
+  ],
+  "degree_sequence": "1 -> 5 -> 6 -> 4",
+  "melody_notes": [
+    {
+      "start": 0,
+      "end": 0.5,
+      "midi": 64,
+      "note": "E4",
+      "solfa": "mi",
+      "amplitude": 0.706
+    },
+    {
+      "start": 0.5,
+      "end": 1,
+      "midi": 52,
+      "note": "E3",
+      "solfa": "mi",
+      "amplitude": 0.672
+    },
+    {
+      "start": 1,
+      "end": 1.5,
+      "midi": 60,
+      "note": "C4",
+      "solfa": "do",
+      "amplitude": 0.673
+    },
+    {
+      "start": 1.5,
+      "end": 1.75,
+      "midi": 52,
+      "note": "E3",
+      "solfa": "mi",
+      "amplitude": 0.672
+    },
+    {
+      "start": 1.75,
+      "end": 2.5,
+      "midi": 59,
+      "note": "B3",
+      "solfa": "ti",
+      "amplitude": 0.689
+    },
+    {
+      "start": 2.5,
+      "end": 3,
+      "midi": 60,
+      "note": "C4",
+      "solfa": "do",
+      "amplitude": 0.664
+    },
+    {
+      "start": 3,
+      "end": 3.75,
+      "midi": 62,
+      "note": "D4",
+      "solfa": "re",
+      "amplitude": 0.605
+    },
+    {
+      "start": 3.75,
+      "end": 4.25,
+      "midi": 60,
+      "note": "C4",
+      "solfa": "do",
+      "amplitude": 0.66
+    },
+    {
+      "start": 4.25,
+      "end": 5.25,
+      "midi": 57,
+      "note": "A3",
+      "solfa": "la",
+      "amplitude": 0.686
+    },
+    {
+      "start": 5.25,
+      "end": 5.75,
+      "midi": 60,
+      "note": "C4",
+      "solfa": "do",
+      "amplitude": 0.653
+    },
+    {
+      "start": 5.75,
+      "end": 6.5,
+      "midi": 57,
+      "note": "A3",
+      "solfa": "la",
+      "amplitude": 0.688
+    },
+    {
+      "start": 6.5,
+      "end": 6.75,
+      "midi": 55,
+      "note": "G3",
+      "solfa": "so",
+      "amplitude": 0.578
+    },
+    {
+      "start": 6.75,
+      "end": 8.25,
+      "midi": 53,
+      "note": "F3",
+      "solfa": "fa",
+      "amplitude": 0.689
+    }
+  ],
+  "solfa_sequence": "mi - mi - do - mi - ti - do - re - do - la - do - la - so - fa",
+  "raw_note_count": 51,
+  "raw_note_max_timestamp": 8.04,
+  "selected_melody_max_timestamp": 8.25,
+  "tonic_solfa_max_timestamp": 8.25,
+  "final_chord_timestamp": 8.5,
+  "analysis_chunks": 1,
+  "analysis_chunk_seconds": 8.5,
+  "analysis_overlap_seconds": 0,
+  "dsp_seconds": 3.167,
+  "basic_pitch_seconds": 16.882,
+  "analysis_seconds": 20.068,
+  "peak_memory_mb": 568.91
+}

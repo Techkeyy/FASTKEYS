@@ -46,9 +46,11 @@ async def analyze(file: UploadFile = File(...)):
         shutil.copyfileobj(file.file, tmp)
         
     try:
-        # Convert to 22050 Hz mono wav for consistent inference
+        # Convert the complete upload to 22050 Hz mono. Long-song chunking
+        # happens inside the analysis engine; truncating here would make full
+        # duration synchronization impossible.
         converted_wav = tmp_path + "_converted.wav"
-        ffmpeg_cmd = f'ffmpeg -i "{tmp_path}" -t 45 -ar 22050 -ac 1 "{converted_wav}" -y -loglevel error'
+        ffmpeg_cmd = f'ffmpeg -i "{tmp_path}" -ar 22050 -ac 1 "{converted_wav}" -y -loglevel error'
         code = os.system(ffmpeg_cmd)
         target_path = converted_wav if code == 0 and os.path.exists(converted_wav) else tmp_path
         

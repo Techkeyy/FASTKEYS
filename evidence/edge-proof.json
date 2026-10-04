@@ -1,0 +1,23 @@
+{
+  "landing320": {
+    "width": 320,
+    "scroll": 320
+  },
+  "workspace320": {
+    "width": 320,
+    "scroll": 320
+  },
+  "audio": {
+    "rms": 0.2271686347559608,
+    "muted": false,
+    "volume": 1,
+    "context": "running",
+    "time": 0.516644
+  },
+  "error": "Analysis could not finish. Please try again in a moment.",
+  "unsupported": "Choose an MP3, WAV, FLAC or OGG audio file.",
+  "empty": "This file is empty. Choose a recording with audio.",
+  "emptyEvents": true,
+  "cancel": true,
+  "sample": true
+}

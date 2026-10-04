@@ -1,0 +1,462 @@
+{
+  "source": "st_louis_blues.mp3",
+  "base": "http://127.0.0.1:8012",
+  "duration": 188.15,
+  "analysisChunks": 7,
+  "chunkSeconds": 30,
+  "overlapSeconds": 3,
+  "basicPitchSeconds": 75.528,
+  "dspSeconds": 27.64,
+  "analysisSeconds": 103.463,
+  "peakMemoryMb": 621.2,
+  "finalEventCounts": {
+    "chords": 99,
+    "melody": 110,
+    "rawNotes": 257
+  },
+  "points": [
+    {
+      "fraction": 0.05,
+      "target": 9.4075,
+      "audioTime": 9.4075,
+      "displayed": {
+        "time": 9.4075,
+        "paused": true,
+        "degree": "1",
+        "chord": "D Major",
+        "solfa": "s",
+        "note": "A",
+        "chordIndex": 5,
+        "melodyIndex": 3,
+        "chordKeys": [
+          50,
+          54,
+          57,
+          62,
+          66,
+          69
+        ],
+        "melodyKeys": [
+          69
+        ],
+        "timeline": 9.41
+      },
+      "backend": {
+        "chordIndex": 5,
+        "chordStart": 8.92,
+        "chordEnd": 10.4,
+        "melodyIndex": 3,
+        "melodyStart": 5.75,
+        "melodyEnd": 11
+      },
+      "chordCovered": true,
+      "melodyIsRest": false
+    },
+    {
+      "fraction": 0.25,
+      "target": 47.0375,
+      "audioTime": 47.0375,
+      "displayed": {
+        "time": 47.0375,
+        "paused": true,
+        "degree": "4m",
+        "chord": "G Minor",
+        "solfa": "·",
+        "note": "Rest",
+        "chordIndex": 29,
+        "melodyIndex": -1,
+        "chordKeys": [
+          50,
+          55,
+          58,
+          62,
+          67,
+          70
+        ],
+        "melodyKeys": [],
+        "timeline": 47.04
+      },
+      "backend": {
+        "chordIndex": 29,
+        "chordStart": 46.07,
+        "chordEnd": 47.55,
+        "melodyIndex": -1,
+        "melodyStart": null,
+        "melodyEnd": null
+      },
+      "chordCovered": true,
+      "melodyIsRest": true
+    },
+    {
+      "fraction": 0.5,
+      "target": 94.075,
+      "audioTime": 94.075,
+      "displayed": {
+        "time": 94.075,
+        "paused": true,
+        "degree": "4",
+        "chord": "G Major",
+        "solfa": "·",
+        "note": "Rest",
+        "chordIndex": 53,
+        "melodyIndex": -1,
+        "chordKeys": [
+          50,
+          55,
+          59,
+          62,
+          67,
+          71
+        ],
+        "melodyKeys": [],
+        "timeline": 94.08
+      },
+      "backend": {
+        "chordIndex": 53,
+        "chordStart": 92.14,
+        "chordEnd": 95.11,
+        "melodyIndex": -1,
+        "melodyStart": null,
+        "melodyEnd": null
+      },
+      "chordCovered": true,
+      "melodyIsRest": true
+    },
+    {
+      "fraction": 0.75,
+      "target": 141.1125,
+      "audioTime": 141.1125,
+      "displayed": {
+        "time": 141.1125,
+        "paused": true,
+        "degree": "2",
+        "chord": "E Major",
+        "solfa": "·",
+        "note": "Rest",
+        "chordIndex": 75,
+        "melodyIndex": -1,
+        "chordKeys": [
+          52,
+          56,
+          59,
+          64,
+          68,
+          71
+        ],
+        "melodyKeys": [],
+        "timeline": 141.11
+      },
+      "backend": {
+        "chordIndex": 75,
+        "chordStart": 139.69,
+        "chordEnd": 141.18,
+        "melodyIndex": -1,
+        "melodyStart": null,
+        "melodyEnd": null
+      },
+      "chordCovered": true,
+      "melodyIsRest": true
+    },
+    {
+      "fraction": 0.95,
+      "target": 178.7425,
+      "audioTime": 178.7425,
+      "displayed": {
+        "time": 178.7425,
+        "paused": true,
+        "degree": "5m",
+        "chord": "A Minor",
+        "solfa": "d",
+        "note": "D",
+        "chordIndex": 94,
+        "melodyIndex": 102,
+        "chordKeys": [
+          48,
+          52,
+          57,
+          60,
+          64,
+          69,
+          72
+        ],
+        "melodyKeys": [
+          62
+        ],
+        "timeline": 178.74
+      },
+      "backend": {
+        "chordIndex": 94,
+        "chordStart": 178.33,
+        "chordEnd": 179.82,
+        "melodyIndex": 102,
+        "melodyStart": 178.5,
+        "melodyEnd": 179
+      },
+      "chordCovered": true,
+      "melodyIsRest": false
+    }
+  ],
+  "finalStates": [
+    {
+      "fraction": 0.9468509168216849,
+      "target": 178.15,
+      "audioTime": 178.15,
+      "displayed": {
+        "time": 178.15,
+        "paused": true,
+        "degree": "1m",
+        "chord": "D Minor",
+        "solfa": "·",
+        "note": "Rest",
+        "chordIndex": 93,
+        "melodyIndex": -1,
+        "chordKeys": [
+          50,
+          53,
+          57,
+          62,
+          65,
+          69
+        ],
+        "melodyKeys": [],
+        "timeline": 178.15
+      },
+      "backend": {
+        "chordIndex": 93,
+        "chordStart": 176.84,
+        "chordEnd": 178.33,
+        "melodyIndex": -1,
+        "melodyStart": null,
+        "melodyEnd": null
+      },
+      "chordCovered": true,
+      "melodyIsRest": true
+    },
+    {
+      "fraction": 0.9734254584108424,
+      "target": 183.15,
+      "audioTime": 183.15,
+      "displayed": {
+        "time": 183.15,
+        "paused": true,
+        "degree": "♭6",
+        "chord": "Bb Major",
+        "solfa": "Bb",
+        "note": "Bb",
+        "chordIndex": 96,
+        "melodyIndex": 109,
+        "chordKeys": [
+          50,
+          53,
+          58,
+          62,
+          65,
+          70
+        ],
+        "melodyKeys": [
+          70
+        ],
+        "timeline": 183.15
+      },
+      "backend": {
+        "chordIndex": 96,
+        "chordStart": 182.79,
+        "chordEnd": 185.76,
+        "melodyIndex": 109,
+        "melodyStart": 182.25,
+        "melodyEnd": 183.5
+      },
+      "chordCovered": true,
+      "melodyIsRest": false
+    },
+    {
+      "fraction": 0.9946850916821685,
+      "target": 187.15,
+      "audioTime": 187.15,
+      "displayed": {
+        "time": 187.15,
+        "paused": true,
+        "degree": "2",
+        "chord": "E Major",
+        "solfa": "·",
+        "note": "Rest",
+        "chordIndex": 97,
+        "melodyIndex": -1,
+        "chordKeys": [
+          52,
+          56,
+          59,
+          64,
+          68,
+          71
+        ],
+        "melodyKeys": [],
+        "timeline": 187.15
+      },
+      "backend": {
+        "chordIndex": 97,
+        "chordStart": 185.76,
+        "chordEnd": 187.25,
+        "melodyIndex": -1,
+        "melodyStart": null,
+        "melodyEnd": null
+      },
+      "chordCovered": true,
+      "melodyIsRest": true
+    }
+  ],
+  "seeks": [
+    {
+      "fraction": 0.1,
+      "target": 18.815,
+      "audioTime": 18.815,
+      "displayed": {
+        "time": 18.815,
+        "paused": true,
+        "degree": "3m",
+        "chord": "F# Minor",
+        "solfa": "·",
+        "note": "Rest",
+        "chordIndex": 11,
+        "melodyIndex": -1,
+        "chordKeys": [
+          49,
+          54,
+          57,
+          61,
+          66,
+          69
+        ],
+        "melodyKeys": [],
+        "timeline": 18.82
+      },
+      "backend": {
+        "chordIndex": 11,
+        "chordStart": 17.83,
+        "chordEnd": 19.32,
+        "melodyIndex": -1,
+        "melodyStart": null,
+        "melodyEnd": null
+      },
+      "chordCovered": true,
+      "melodyIsRest": true
+    },
+    {
+      "fraction": 0.8,
+      "target": 150.52,
+      "audioTime": 150.52,
+      "displayed": {
+        "time": 150.52,
+        "paused": true,
+        "degree": "2",
+        "chord": "E Major",
+        "solfa": "r",
+        "note": "E",
+        "chordIndex": 82,
+        "melodyIndex": 88,
+        "chordKeys": [
+          52,
+          56,
+          59,
+          64,
+          68,
+          71
+        ],
+        "melodyKeys": [
+          64
+        ],
+        "timeline": 150.52
+      },
+      "backend": {
+        "chordIndex": 82,
+        "chordStart": 150.09,
+        "chordEnd": 151.58,
+        "melodyIndex": 88,
+        "melodyStart": 150.5,
+        "melodyEnd": 151
+      },
+      "chordCovered": true,
+      "melodyIsRest": false
+    },
+    {
+      "fraction": 0.35,
+      "target": 65.85249999999999,
+      "audioTime": 65.852498,
+      "displayed": {
+        "time": 65.852498,
+        "paused": true,
+        "degree": "7",
+        "chord": "C# Major",
+        "solfa": "·",
+        "note": "Rest",
+        "chordIndex": 38,
+        "melodyIndex": -1,
+        "chordKeys": [
+          49,
+          53,
+          56,
+          61,
+          65,
+          68
+        ],
+        "melodyKeys": [],
+        "timeline": 65.85
+      },
+      "backend": {
+        "chordIndex": 38,
+        "chordStart": 65.39,
+        "chordEnd": 66.87,
+        "melodyIndex": -1,
+        "melodyStart": null,
+        "melodyEnd": null
+      },
+      "chordCovered": true,
+      "melodyIsRest": true
+    },
+    {
+      "fraction": 0.95,
+      "target": 178.7425,
+      "audioTime": 178.7425,
+      "displayed": {
+        "time": 178.7425,
+        "paused": true,
+        "degree": "5m",
+        "chord": "A Minor",
+        "solfa": "d",
+        "note": "D",
+        "chordIndex": 94,
+        "melodyIndex": 102,
+        "chordKeys": [
+          48,
+          52,
+          57,
+          60,
+          64,
+          69,
+          72
+        ],
+        "melodyKeys": [
+          62
+        ],
+        "timeline": 178.74
+      },
+      "backend": {
+        "chordIndex": 94,
+        "chordStart": 178.33,
+        "chordEnd": 179.82,
+        "melodyIndex": 102,
+        "melodyStart": 178.5,
+        "melodyEnd": 179
+      },
+      "chordCovered": true,
+      "melodyIsRest": false
+    }
+  ],
+  "playback": {
+    "time": 1.30244,
+    "paused": false,
+    "degree": "1",
+    "chord": "D Major"
+  },
+  "errors": []
+}

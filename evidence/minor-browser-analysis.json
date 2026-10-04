@@ -1,0 +1,3092 @@
+{
+  "filename": "fur_elise.ogg",
+  "duration": 176.5,
+  "key": "E Minor",
+  "key_confidence": 0.7236,
+  "chord_progression": [
+    {
+      "start": 0,
+      "end": 1.49,
+      "chord": "E",
+      "degree": "1",
+      "confidence": 0.618
+    },
+    {
+      "start": 1.49,
+      "end": 2.97,
+      "chord": "Am",
+      "degree": "4",
+      "confidence": 0.844
+    },
+    {
+      "start": 2.97,
+      "end": 7.43,
+      "chord": "E",
+      "degree": "1",
+      "confidence": 0.872
+    },
+    {
+      "start": 7.43,
+      "end": 8.92,
+      "chord": "Am",
+      "degree": "4",
+      "confidence": 0.907
+    },
+    {
+      "start": 8.92,
+      "end": 10.4,
+      "chord": "E",
+      "degree": "1",
+      "confidence": 0.907
+    },
+    {
+      "start": 10.4,
+      "end": 11.89,
+      "chord": "Am",
+      "degree": "4",
+      "confidence": 0.841
+    },
+    {
+      "start": 11.89,
+      "end": 13.37,
+      "chord": "E",
+      "degree": "1",
+      "confidence": 0.66
+    },
+    {
+      "start": 13.37,
+      "end": 14.86,
+      "chord": "Am",
+      "degree": "4",
+      "confidence": 0.905
+    },
+    {
+      "start": 14.86,
+      "end": 16.35,
+      "chord": "E",
+      "degree": "1",
+      "confidence": 0.904
+    },
+    {
+      "start": 16.35,
+      "end": 17.83,
+      "chord": "Am",
+      "degree": "4",
+      "confidence": 0.792
+    },
+    {
+      "start": 17.83,
+      "end": 19.32,
+      "chord": "E",
+      "degree": "1",
+      "confidence": 0.623
+    },
+    {
+      "start": 19.32,
+      "end": 20.81,
+      "chord": "Am",
+      "degree": "4",
+      "confidence": 0.923
+    },
+    {
+      "start": 20.81,
+      "end": 23.78,
+      "chord": "E",
+      "degree": "1",
+      "confidence": 0.951
+    },
+    {
+      "start": 23.78,
+      "end": 25.26,
+      "chord": "C",
+      "degree": "b6",
+      "confidence": 0.93
+    },
+    {
+      "start": 25.26,
+      "end": 26.75,
+      "chord": "G",
+      "degree": "b3",
+      "confidence": 0.86
+    },
+    {
+      "start": 26.75,
+      "end": 28.24,
+      "chord": "Am",
+      "degree": "4",
+      "confidence": 0.848
+    },
+    {
+      "start": 28.24,
+      "end": 31.21,
+      "chord": "E",
+      "degree": "1",
+      "confidence": 0.851
+    },
+    {
+      "start": 31.21,
+      "end": 32.69,
+      "chord": "B",
+      "degree": "5",
+      "confidence": 0.602
+    },
+    {
+      "start": 32.69,
+      "end": 34.18,
+      "chord": "Am",
+      "degree": "4",
+      "confidence": 0.921
+    },
+    {
+      "start": 34.18,
+      "end": 38.64,
+      "chord": "E",
+      "degree": "1",
+      "confidence": 0.934
+    },
+    {
+      "start": 38.64,
+      "end": 40.12,
+      "chord": "Am",
+      "degree": "4",
+      "confidence": 0.948
+    },
+    {
+      "start": 40.12,
+      "end": 41.61,
+      "chord": "E",
+      "degree": "1",
+      "confidence": 0.947
+    },
+    {
+      "start": 41.61,
+      "end": 43.1,
+      "chord": "Am",
+      "degree": "4",
+      "confidence": 0.828
+    },
+    {
+      "start": 43.1,
+      "end": 44.58,
+      "chord": "C",
+      "degree": "b6",
+      "confidence": 0.931
+    },
+    {
+      "start": 44.58,
+      "end": 46.07,
+      "chord": "G",
+      "degree": "b3",
+      "confidence": 0.861
+    },
+    {
+      "start": 46.07,
+      "end": 47.55,
+      "chord": "Am",
+      "degree": "4",
+      "confidence": 0.811
+    },
+    {
+      "start": 47.55,
+      "end": 52.01,
+      "chord": "E",
+      "degree": "1",
+      "confidence": 0.846
+    },
+    {
+      "start": 52.01,
+      "end": 53.5,
+      "chord": "Am",
+      "degree": "4",
+      "confidence": 0.927
+    },
+    {
+      "start": 53.5,
+      "end": 54.98,
+      "chord": "E",
+      "degree": "1",
+      "confidence": 0.971
+    },
+    {
+      "start": 54.98,
+      "end": 59.44,
+      "chord": "Am",
+      "degree": "4",
+      "confidence": 0.865
+    },
+    {
+      "start": 59.44,
+      "end": 60.93,
+      "chord": "E",
+      "degree": "1",
+      "confidence": 0.924
+    },
+    {
+      "start": 60.93,
+      "end": 62.42,
+      "chord": "Am",
+      "degree": "4",
+      "confidence": 0.827
+    },
+    {
+      "start": 62.42,
+      "end": 63.9,
+      "chord": "F",
+      "degree": "b2",
+      "confidence": 0.897
+    },
+    {
+      "start": 63.9,
+      "end": 66.87,
+      "chord": "A#",
+      "degree": "b5",
+      "confidence": 0.87
+    },
+    {
+      "start": 66.87,
+      "end": 68.36,
+      "chord": "F",
+      "degree": "b2",
+      "confidence": 0.796
+    },
+    {
+      "start": 68.36,
+      "end": 69.85,
+      "chord": "Am",
+      "degree": "4",
+      "confidence": 0.769
+    },
+    {
+      "start": 69.85,
+      "end": 75.79,
+      "chord": "C",
+      "degree": "b6",
+      "confidence": 0.867
+    },
+    {
+      "start": 75.79,
+      "end": 83.22,
+      "chord": "E",
+      "degree": "1",
+      "confidence": 0.769
+    },
+    {
+      "start": 83.22,
+      "end": 84.71,
+      "chord": "D#",
+      "degree": "7",
+      "confidence": 0.558
+    },
+    {
+      "start": 84.71,
+      "end": 87.68,
+      "chord": "Am",
+      "degree": "4",
+      "confidence": 0.86
+    },
+    {
+      "start": 87.68,
+      "end": 89.16,
+      "chord": "E",
+      "degree": "1",
+      "confidence": 0.947
+    },
+    {
+      "start": 89.16,
+      "end": 93.62,
+      "chord": "Am",
+      "degree": "4",
+      "confidence": 0.886
+    },
+    {
+      "start": 93.62,
+      "end": 95.11,
+      "chord": "E",
+      "degree": "1",
+      "confidence": 0.923
+    },
+    {
+      "start": 95.11,
+      "end": 96.6,
+      "chord": "Am",
+      "degree": "4",
+      "confidence": 0.817
+    },
+    {
+      "start": 96.6,
+      "end": 98.08,
+      "chord": "C",
+      "degree": "b6",
+      "confidence": 0.897
+    },
+    {
+      "start": 98.08,
+      "end": 99.57,
+      "chord": "G",
+      "degree": "b3",
+      "confidence": 0.784
+    },
+    {
+      "start": 99.57,
+      "end": 105.51,
+      "chord": "E",
+      "degree": "1",
+      "confidence": 0.826
+    },
+    {
+      "start": 105.51,
+      "end": 107,
+      "chord": "Am",
+      "degree": "4",
+      "confidence": 0.919
+    },
+    {
+      "start": 107,
+      "end": 108.48,
+      "chord": "E",
+      "degree": "1",
+      "confidence": 0.97
+    },
+    {
+      "start": 108.48,
+      "end": 112.94,
+      "chord": "Am",
+      "degree": "4",
+      "confidence": 0.865
+    },
+    {
+      "start": 112.94,
+      "end": 114.43,
+      "chord": "E",
+      "degree": "1",
+      "confidence": 0.937
+    },
+    {
+      "start": 114.43,
+      "end": 117.4,
+      "chord": "A",
+      "degree": "4",
+      "confidence": 0.807
+    },
+    {
+      "start": 117.4,
+      "end": 118.89,
+      "chord": "Dm",
+      "degree": "b7",
+      "confidence": 0.722
+    },
+    {
+      "start": 118.89,
+      "end": 120.37,
+      "chord": "Am",
+      "degree": "4",
+      "confidence": 0.834
+    },
+    {
+      "start": 120.37,
+      "end": 121.86,
+      "chord": "Dm",
+      "degree": "b7",
+      "confidence": 0.73
+    },
+    {
+      "start": 121.86,
+      "end": 124.83,
+      "chord": "Am",
+      "degree": "4",
+      "confidence": 0.796
+    },
+    {
+      "start": 124.83,
+      "end": 126.32,
+      "chord": "A",
+      "degree": "4",
+      "confidence": 0.641
+    },
+    {
+      "start": 126.32,
+      "end": 127.8,
+      "chord": "Dm",
+      "degree": "b7",
+      "confidence": 0.837
+    },
+    {
+      "start": 127.8,
+      "end": 132.26,
+      "chord": "A#",
+      "degree": "b5",
+      "confidence": 0.84
+    },
+    {
+      "start": 132.26,
+      "end": 133.75,
+      "chord": "F",
+      "degree": "b2",
+      "confidence": 0.646
+    },
+    {
+      "start": 133.75,
+      "end": 135.23,
+      "chord": "E",
+      "degree": "1",
+      "confidence": 0.793
+    },
+    {
+      "start": 135.23,
+      "end": 139.69,
+      "chord": "Am",
+      "degree": "4",
+      "confidence": 0.868
+    },
+    {
+      "start": 139.69,
+      "end": 141.18,
+      "chord": "Em",
+      "degree": "1",
+      "confidence": 0.537
+    },
+    {
+      "start": 141.18,
+      "end": 144.15,
+      "chord": "Am",
+      "degree": "4",
+      "confidence": 0.844
+    },
+    {
+      "start": 144.15,
+      "end": 145.64,
+      "chord": "E",
+      "degree": "1",
+      "confidence": 0.926
+    },
+    {
+      "start": 145.64,
+      "end": 150.09,
+      "chord": "Am",
+      "degree": "4",
+      "confidence": 0.806
+    },
+    {
+      "start": 150.09,
+      "end": 151.58,
+      "chord": "E",
+      "degree": "1",
+      "confidence": 0.86
+    },
+    {
+      "start": 151.58,
+      "end": 156.04,
+      "chord": "C",
+      "degree": "b6",
+      "confidence": 0.82
+    },
+    {
+      "start": 156.04,
+      "end": 159.01,
+      "chord": "E",
+      "degree": "1",
+      "confidence": 0.794
+    },
+    {
+      "start": 159.01,
+      "end": 160.5,
+      "chord": "D#",
+      "degree": "7",
+      "confidence": 0.558
+    },
+    {
+      "start": 160.5,
+      "end": 163.47,
+      "chord": "Am",
+      "degree": "4",
+      "confidence": 0.851
+    },
+    {
+      "start": 163.47,
+      "end": 164.95,
+      "chord": "E",
+      "degree": "1",
+      "confidence": 0.931
+    },
+    {
+      "start": 164.95,
+      "end": 169.41,
+      "chord": "Am",
+      "degree": "4",
+      "confidence": 0.941
+    },
+    {
+      "start": 169.41,
+      "end": 172.38,
+      "chord": "E",
+      "degree": "1",
+      "confidence": 0.982
+    },
+    {
+      "start": 172.38,
+      "end": 175.36,
+      "chord": "Am",
+      "degree": "4",
+      "confidence": 0.915
+    },
+    {
+      "start": 175.36,
+      "end": 176.5,
+      "chord": "A",
+      "degree": "4",
+      "confidence": 0.883
+    }
+  ],
+  "degree_sequence": "1 -> 4 -> 1 -> 4 -> 1 -> 4 -> 1 -> 4 -> 1 -> 4 -> 1 -> 4",
+  "melody_notes": [
+    {
+      "start": 0,
+      "end": 0.5,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.832
+    },
+    {
+      "start": 0.5,
+      "end": 1.25,
+      "midi": 75,
+      "note": "D#5",
+      "solfa": "ti",
+      "amplitude": 0.814
+    },
+    {
+      "start": 1.25,
+      "end": 1.75,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.701
+    },
+    {
+      "start": 1.75,
+      "end": 2,
+      "midi": 71,
+      "note": "B4",
+      "solfa": "so",
+      "amplitude": 0.695
+    },
+    {
+      "start": 2,
+      "end": 2.25,
+      "midi": 74,
+      "note": "D5",
+      "solfa": "li/ta",
+      "amplitude": 0.682
+    },
+    {
+      "start": 2.25,
+      "end": 2.75,
+      "midi": 69,
+      "note": "A4",
+      "solfa": "fa",
+      "amplitude": 0.681
+    },
+    {
+      "start": 2.75,
+      "end": 3.25,
+      "midi": 52,
+      "note": "E3",
+      "solfa": "do",
+      "amplitude": 0.68
+    },
+    {
+      "start": 3.25,
+      "end": 3.75,
+      "midi": 69,
+      "note": "A4",
+      "solfa": "fa",
+      "amplitude": 0.618
+    },
+    {
+      "start": 3.75,
+      "end": 4,
+      "midi": 71,
+      "note": "B4",
+      "solfa": "so",
+      "amplitude": 0.562
+    },
+    {
+      "start": 4,
+      "end": 4.75,
+      "midi": 56,
+      "note": "G#3",
+      "solfa": "mi",
+      "amplitude": 0.705
+    },
+    {
+      "start": 4.75,
+      "end": 5,
+      "midi": 71,
+      "note": "B4",
+      "solfa": "so",
+      "amplitude": 0.602
+    },
+    {
+      "start": 5,
+      "end": 5.25,
+      "midi": 72,
+      "note": "C5",
+      "solfa": "si/le",
+      "amplitude": 0.577
+    },
+    {
+      "start": 5.25,
+      "end": 5.5,
+      "midi": 52,
+      "note": "E3",
+      "solfa": "do",
+      "amplitude": 0.649
+    },
+    {
+      "start": 5.5,
+      "end": 5.75,
+      "midi": 64,
+      "note": "E4",
+      "solfa": "do",
+      "amplitude": 0.671
+    },
+    {
+      "start": 5.75,
+      "end": 6.25,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.823
+    },
+    {
+      "start": 6.25,
+      "end": 7,
+      "midi": 75,
+      "note": "D#5",
+      "solfa": "ti",
+      "amplitude": 0.791
+    },
+    {
+      "start": 7,
+      "end": 7.75,
+      "midi": 71,
+      "note": "B4",
+      "solfa": "so",
+      "amplitude": 0.716
+    },
+    {
+      "start": 7.75,
+      "end": 8.5,
+      "midi": 69,
+      "note": "A4",
+      "solfa": "fa",
+      "amplitude": 0.687
+    },
+    {
+      "start": 8.5,
+      "end": 8.75,
+      "midi": 60,
+      "note": "C4",
+      "solfa": "si/le",
+      "amplitude": 0.655
+    },
+    {
+      "start": 8.75,
+      "end": 9.25,
+      "midi": 69,
+      "note": "A4",
+      "solfa": "fa",
+      "amplitude": 0.648
+    },
+    {
+      "start": 9.25,
+      "end": 9.5,
+      "midi": 71,
+      "note": "B4",
+      "solfa": "so",
+      "amplitude": 0.563
+    },
+    {
+      "start": 9.5,
+      "end": 10,
+      "midi": 56,
+      "note": "G#3",
+      "solfa": "mi",
+      "amplitude": 0.713
+    },
+    {
+      "start": 10,
+      "end": 10.5,
+      "midi": 72,
+      "note": "C5",
+      "solfa": "si/le",
+      "amplitude": 0.724
+    },
+    {
+      "start": 10.5,
+      "end": 10.75,
+      "midi": 56,
+      "note": "G#3",
+      "solfa": "mi",
+      "amplitude": 0.713
+    },
+    {
+      "start": 10.75,
+      "end": 11.75,
+      "midi": 69,
+      "note": "A4",
+      "solfa": "fa",
+      "amplitude": 0.639
+    },
+    {
+      "start": 11.75,
+      "end": 12.25,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.827
+    },
+    {
+      "start": 12.25,
+      "end": 13,
+      "midi": 75,
+      "note": "D#5",
+      "solfa": "ti",
+      "amplitude": 0.809
+    },
+    {
+      "start": 13,
+      "end": 13.5,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.686
+    },
+    {
+      "start": 13.5,
+      "end": 13.75,
+      "midi": 74,
+      "note": "D5",
+      "solfa": "li/ta",
+      "amplitude": 0.67
+    },
+    {
+      "start": 13.75,
+      "end": 14,
+      "midi": 72,
+      "note": "C5",
+      "solfa": "si/le",
+      "amplitude": 0.648
+    },
+    {
+      "start": 14,
+      "end": 14.25,
+      "midi": 69,
+      "note": "A4",
+      "solfa": "fa",
+      "amplitude": 0.652
+    },
+    {
+      "start": 14.25,
+      "end": 15.25,
+      "midi": 60,
+      "note": "C4",
+      "solfa": "si/le",
+      "amplitude": 0.692
+    },
+    {
+      "start": 15.25,
+      "end": 15.75,
+      "midi": 52,
+      "note": "E3",
+      "solfa": "do",
+      "amplitude": 0.634
+    },
+    {
+      "start": 15.75,
+      "end": 16.25,
+      "midi": 64,
+      "note": "E4",
+      "solfa": "do",
+      "amplitude": 0.683
+    },
+    {
+      "start": 16.25,
+      "end": 16.5,
+      "midi": 68,
+      "note": "G#4",
+      "solfa": "mi",
+      "amplitude": 0.602
+    },
+    {
+      "start": 16.5,
+      "end": 17.25,
+      "midi": 72,
+      "note": "C5",
+      "solfa": "si/le",
+      "amplitude": 0.59
+    },
+    {
+      "start": 17.25,
+      "end": 17.5,
+      "midi": 64,
+      "note": "E4",
+      "solfa": "do",
+      "amplitude": 0.693
+    },
+    {
+      "start": 17.5,
+      "end": 18,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.817
+    },
+    {
+      "start": 18,
+      "end": 18.75,
+      "midi": 75,
+      "note": "D#5",
+      "solfa": "ti",
+      "amplitude": 0.779
+    },
+    {
+      "start": 18.75,
+      "end": 19.25,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.731
+    },
+    {
+      "start": 19.25,
+      "end": 19.5,
+      "midi": 74,
+      "note": "D5",
+      "solfa": "li/ta",
+      "amplitude": 0.687
+    },
+    {
+      "start": 19.5,
+      "end": 20.25,
+      "midi": 69,
+      "note": "A4",
+      "solfa": "fa",
+      "amplitude": 0.658
+    },
+    {
+      "start": 20.25,
+      "end": 21,
+      "midi": 60,
+      "note": "C4",
+      "solfa": "si/le",
+      "amplitude": 0.678
+    },
+    {
+      "start": 21,
+      "end": 21.25,
+      "midi": 71,
+      "note": "B4",
+      "solfa": "so",
+      "amplitude": 0.582
+    },
+    {
+      "start": 21.25,
+      "end": 22.5,
+      "midi": 56,
+      "note": "G#3",
+      "solfa": "mi",
+      "amplitude": 0.703
+    },
+    {
+      "start": 22.5,
+      "end": 23.25,
+      "midi": 69,
+      "note": "A4",
+      "solfa": "fa",
+      "amplitude": 0.665
+    },
+    {
+      "start": 23.25,
+      "end": 24,
+      "midi": 72,
+      "note": "C5",
+      "solfa": "si/le",
+      "amplitude": 0.655
+    },
+    {
+      "start": 24,
+      "end": 24.25,
+      "midi": 74,
+      "note": "D5",
+      "solfa": "li/ta",
+      "amplitude": 0.608
+    },
+    {
+      "start": 24.25,
+      "end": 24.75,
+      "midi": 55,
+      "note": "G3",
+      "solfa": "ri/me",
+      "amplitude": 0.646
+    },
+    {
+      "start": 24.75,
+      "end": 25.25,
+      "midi": 77,
+      "note": "F5",
+      "solfa": "di/ra",
+      "amplitude": 0.686
+    },
+    {
+      "start": 25.25,
+      "end": 25.5,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.633
+    },
+    {
+      "start": 25.5,
+      "end": 25.75,
+      "midi": 74,
+      "note": "D5",
+      "solfa": "li/ta",
+      "amplitude": 0.528
+    },
+    {
+      "start": 25.75,
+      "end": 26,
+      "midi": 65,
+      "note": "F4",
+      "solfa": "di/ra",
+      "amplitude": 0.605
+    },
+    {
+      "start": 26,
+      "end": 26.75,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.676
+    },
+    {
+      "start": 26.75,
+      "end": 28.25,
+      "midi": 72,
+      "note": "C5",
+      "solfa": "si/le",
+      "amplitude": 0.589
+    },
+    {
+      "start": 28.25,
+      "end": 28.75,
+      "midi": 52,
+      "note": "E3",
+      "solfa": "do",
+      "amplitude": 0.713
+    },
+    {
+      "start": 28.75,
+      "end": 29,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.674
+    },
+    {
+      "start": 29,
+      "end": 29.25,
+      "midi": 64,
+      "note": "E4",
+      "solfa": "do",
+      "amplitude": 0.727
+    },
+    {
+      "start": 29.25,
+      "end": 30,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.694
+    },
+    {
+      "start": 30,
+      "end": 30.25,
+      "midi": 75,
+      "note": "D#5",
+      "solfa": "ti",
+      "amplitude": 0.737
+    },
+    {
+      "start": 30.25,
+      "end": 30.5,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.772
+    },
+    {
+      "start": 30.5,
+      "end": 31,
+      "midi": 75,
+      "note": "D#5",
+      "solfa": "ti",
+      "amplitude": 0.82
+    },
+    {
+      "start": 31,
+      "end": 31.25,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.808
+    },
+    {
+      "start": 31.25,
+      "end": 32,
+      "midi": 75,
+      "note": "D#5",
+      "solfa": "ti",
+      "amplitude": 0.795
+    },
+    {
+      "start": 32,
+      "end": 32.75,
+      "midi": 71,
+      "note": "B4",
+      "solfa": "so",
+      "amplitude": 0.702
+    },
+    {
+      "start": 32.75,
+      "end": 33,
+      "midi": 74,
+      "note": "D5",
+      "solfa": "li/ta",
+      "amplitude": 0.688
+    },
+    {
+      "start": 33,
+      "end": 33.75,
+      "midi": 69,
+      "note": "A4",
+      "solfa": "fa",
+      "amplitude": 0.638
+    },
+    {
+      "start": 33.75,
+      "end": 34.25,
+      "midi": 60,
+      "note": "C4",
+      "solfa": "si/le",
+      "amplitude": 0.68
+    },
+    {
+      "start": 34.25,
+      "end": 35.25,
+      "midi": 71,
+      "note": "B4",
+      "solfa": "so",
+      "amplitude": 0.649
+    },
+    {
+      "start": 35.25,
+      "end": 35.75,
+      "midi": 68,
+      "note": "G#4",
+      "solfa": "mi",
+      "amplitude": 0.687
+    },
+    {
+      "start": 35.75,
+      "end": 36,
+      "midi": 71,
+      "note": "B4",
+      "solfa": "so",
+      "amplitude": 0.646
+    },
+    {
+      "start": 36,
+      "end": 36.5,
+      "midi": 52,
+      "note": "E3",
+      "solfa": "do",
+      "amplitude": 0.706
+    },
+    {
+      "start": 36.5,
+      "end": 36.75,
+      "midi": 64,
+      "note": "E4",
+      "solfa": "do",
+      "amplitude": 0.68
+    },
+    {
+      "start": 36.75,
+      "end": 37.25,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.818
+    },
+    {
+      "start": 37.25,
+      "end": 38,
+      "midi": 75,
+      "note": "D#5",
+      "solfa": "ti",
+      "amplitude": 0.771
+    },
+    {
+      "start": 38,
+      "end": 38.75,
+      "midi": 71,
+      "note": "B4",
+      "solfa": "so",
+      "amplitude": 0.702
+    },
+    {
+      "start": 38.75,
+      "end": 39.5,
+      "midi": 69,
+      "note": "A4",
+      "solfa": "fa",
+      "amplitude": 0.641
+    },
+    {
+      "start": 39.5,
+      "end": 39.75,
+      "midi": 60,
+      "note": "C4",
+      "solfa": "si/le",
+      "amplitude": 0.674
+    },
+    {
+      "start": 39.75,
+      "end": 40.5,
+      "midi": 69,
+      "note": "A4",
+      "solfa": "fa",
+      "amplitude": 0.664
+    },
+    {
+      "start": 40.5,
+      "end": 41,
+      "midi": 56,
+      "note": "G#3",
+      "solfa": "mi",
+      "amplitude": 0.678
+    },
+    {
+      "start": 41,
+      "end": 41.5,
+      "midi": 72,
+      "note": "C5",
+      "solfa": "si/le",
+      "amplitude": 0.675
+    },
+    {
+      "start": 41.5,
+      "end": 42.5,
+      "midi": 69,
+      "note": "A4",
+      "solfa": "fa",
+      "amplitude": 0.666
+    },
+    {
+      "start": 42.5,
+      "end": 42.75,
+      "midi": 71,
+      "note": "B4",
+      "solfa": "so",
+      "amplitude": 0.647
+    },
+    {
+      "start": 42.75,
+      "end": 43.25,
+      "midi": 74,
+      "note": "D5",
+      "solfa": "li/ta",
+      "amplitude": 0.654
+    },
+    {
+      "start": 43.25,
+      "end": 44,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.541
+    },
+    {
+      "start": 44,
+      "end": 44.5,
+      "midi": 77,
+      "note": "F5",
+      "solfa": "di/ra",
+      "amplitude": 0.67
+    },
+    {
+      "start": 44.5,
+      "end": 45.25,
+      "midi": 74,
+      "note": "D5",
+      "solfa": "li/ta",
+      "amplitude": 0.607
+    },
+    {
+      "start": 45.25,
+      "end": 46,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.642
+    },
+    {
+      "start": 46,
+      "end": 47.5,
+      "midi": 72,
+      "note": "C5",
+      "solfa": "si/le",
+      "amplitude": 0.579
+    },
+    {
+      "start": 47.5,
+      "end": 48,
+      "midi": 64,
+      "note": "E4",
+      "solfa": "do",
+      "amplitude": 0.671
+    },
+    {
+      "start": 48,
+      "end": 49,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.717
+    },
+    {
+      "start": 49,
+      "end": 51,
+      "midi": 75,
+      "note": "D#5",
+      "solfa": "ti",
+      "amplitude": 0.77
+    },
+    {
+      "start": 51,
+      "end": 51.75,
+      "midi": 71,
+      "note": "B4",
+      "solfa": "so",
+      "amplitude": 0.707
+    },
+    {
+      "start": 51.75,
+      "end": 52,
+      "midi": 74,
+      "note": "D5",
+      "solfa": "li/ta",
+      "amplitude": 0.668
+    },
+    {
+      "start": 52,
+      "end": 52.5,
+      "midi": 52,
+      "note": "E3",
+      "solfa": "do",
+      "amplitude": 0.676
+    },
+    {
+      "start": 52.5,
+      "end": 53.25,
+      "midi": 60,
+      "note": "C4",
+      "solfa": "si/le",
+      "amplitude": 0.66
+    },
+    {
+      "start": 53.25,
+      "end": 54.25,
+      "midi": 71,
+      "note": "B4",
+      "solfa": "so",
+      "amplitude": 0.625
+    },
+    {
+      "start": 54.25,
+      "end": 54.5,
+      "midi": 56,
+      "note": "G#3",
+      "solfa": "mi",
+      "amplitude": 0.634
+    },
+    {
+      "start": 54.5,
+      "end": 54.75,
+      "midi": 71,
+      "note": "B4",
+      "solfa": "so",
+      "amplitude": 0.602
+    },
+    {
+      "start": 54.75,
+      "end": 55.25,
+      "midi": 72,
+      "note": "C5",
+      "solfa": "si/le",
+      "amplitude": 0.613
+    },
+    {
+      "start": 55.25,
+      "end": 55.5,
+      "midi": 64,
+      "note": "E4",
+      "solfa": "do",
+      "amplitude": 0.717
+    },
+    {
+      "start": 55.5,
+      "end": 55.75,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.746
+    },
+    {
+      "start": 55.75,
+      "end": 56,
+      "midi": 75,
+      "note": "D#5",
+      "solfa": "ti",
+      "amplitude": 0.762
+    },
+    {
+      "start": 56,
+      "end": 56.25,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.784
+    },
+    {
+      "start": 56.25,
+      "end": 57,
+      "midi": 75,
+      "note": "D#5",
+      "solfa": "ti",
+      "amplitude": 0.848
+    },
+    {
+      "start": 57,
+      "end": 57.25,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.716
+    },
+    {
+      "start": 57.25,
+      "end": 57.5,
+      "midi": 71,
+      "note": "B4",
+      "solfa": "so",
+      "amplitude": 0.723
+    },
+    {
+      "start": 57.5,
+      "end": 57.75,
+      "midi": 74,
+      "note": "D5",
+      "solfa": "li/ta",
+      "amplitude": 0.664
+    },
+    {
+      "start": 57.75,
+      "end": 58.25,
+      "midi": 69,
+      "note": "A4",
+      "solfa": "fa",
+      "amplitude": 0.616
+    },
+    {
+      "start": 58.25,
+      "end": 58.75,
+      "midi": 60,
+      "note": "C4",
+      "solfa": "si/le",
+      "amplitude": 0.65
+    },
+    {
+      "start": 58.75,
+      "end": 59.25,
+      "midi": 69,
+      "note": "A4",
+      "solfa": "fa",
+      "amplitude": 0.622
+    },
+    {
+      "start": 59.25,
+      "end": 59.5,
+      "midi": 71,
+      "note": "B4",
+      "solfa": "so",
+      "amplitude": 0.553
+    },
+    {
+      "start": 59.5,
+      "end": 60,
+      "midi": 56,
+      "note": "G#3",
+      "solfa": "mi",
+      "amplitude": 0.692
+    },
+    {
+      "start": 60,
+      "end": 60.5,
+      "midi": 72,
+      "note": "C5",
+      "solfa": "si/le",
+      "amplitude": 0.667
+    },
+    {
+      "start": 60.5,
+      "end": 60.75,
+      "midi": 56,
+      "note": "G#3",
+      "solfa": "mi",
+      "amplitude": 0.692
+    },
+    {
+      "start": 60.75,
+      "end": 61.25,
+      "midi": 52,
+      "note": "E3",
+      "solfa": "do",
+      "amplitude": 0.675
+    },
+    {
+      "start": 61.25,
+      "end": 61.5,
+      "midi": 60,
+      "note": "C4",
+      "solfa": "si/le",
+      "amplitude": 0.663
+    },
+    {
+      "start": 61.5,
+      "end": 62,
+      "midi": 65,
+      "note": "F4",
+      "solfa": "di/ra",
+      "amplitude": 0.675
+    },
+    {
+      "start": 62,
+      "end": 62.25,
+      "midi": 60,
+      "note": "C4",
+      "solfa": "si/le",
+      "amplitude": 0.659
+    },
+    {
+      "start": 62.25,
+      "end": 62.75,
+      "midi": 53,
+      "note": "F3",
+      "solfa": "di/ra",
+      "amplitude": 0.698
+    },
+    {
+      "start": 62.75,
+      "end": 63.5,
+      "midi": 60,
+      "note": "C4",
+      "solfa": "si/le",
+      "amplitude": 0.752
+    },
+    {
+      "start": 63.5,
+      "end": 64.25,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.704
+    },
+    {
+      "start": 64.25,
+      "end": 64.5,
+      "midi": 74,
+      "note": "D5",
+      "solfa": "li/ta",
+      "amplitude": 0.635
+    },
+    {
+      "start": 64.5,
+      "end": 65,
+      "midi": 82,
+      "note": "A#5",
+      "solfa": "fi/se",
+      "amplitude": 0.703
+    },
+    {
+      "start": 65,
+      "end": 65.5,
+      "midi": 79,
+      "note": "G5",
+      "solfa": "ri/me",
+      "amplitude": 0.676
+    },
+    {
+      "start": 65.5,
+      "end": 65.75,
+      "midi": 77,
+      "note": "F5",
+      "solfa": "di/ra",
+      "amplitude": 0.579
+    },
+    {
+      "start": 65.75,
+      "end": 66,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.56
+    },
+    {
+      "start": 66,
+      "end": 66.25,
+      "midi": 72,
+      "note": "C5",
+      "solfa": "si/le",
+      "amplitude": 0.541
+    },
+    {
+      "start": 66.25,
+      "end": 66.5,
+      "midi": 70,
+      "note": "A#4",
+      "solfa": "fi/se",
+      "amplitude": 0.618
+    },
+    {
+      "start": 66.5,
+      "end": 67.25,
+      "midi": 69,
+      "note": "A4",
+      "solfa": "fa",
+      "amplitude": 0.628
+    },
+    {
+      "start": 67.25,
+      "end": 67.75,
+      "midi": 70,
+      "note": "A#4",
+      "solfa": "fi/se",
+      "amplitude": 0.557
+    },
+    {
+      "start": 67.75,
+      "end": 68,
+      "midi": 53,
+      "note": "F3",
+      "solfa": "di/ra",
+      "amplitude": 0.613
+    },
+    {
+      "start": 68,
+      "end": 68.5,
+      "midi": 60,
+      "note": "C4",
+      "solfa": "si/le",
+      "amplitude": 0.732
+    },
+    {
+      "start": 68.5,
+      "end": 68.75,
+      "midi": 74,
+      "note": "D5",
+      "solfa": "li/ta",
+      "amplitude": 0.651
+    },
+    {
+      "start": 68.75,
+      "end": 69.25,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.588
+    },
+    {
+      "start": 69.25,
+      "end": 70.25,
+      "midi": 60,
+      "note": "C4",
+      "solfa": "si/le",
+      "amplitude": 0.684
+    },
+    {
+      "start": 70.25,
+      "end": 70.5,
+      "midi": 72,
+      "note": "C5",
+      "solfa": "si/le",
+      "amplitude": 0.659
+    },
+    {
+      "start": 70.5,
+      "end": 70.75,
+      "midi": 55,
+      "note": "G3",
+      "solfa": "ri/me",
+      "amplitude": 0.717
+    },
+    {
+      "start": 70.75,
+      "end": 71.75,
+      "midi": 71,
+      "note": "B4",
+      "solfa": "so",
+      "amplitude": 0.694
+    },
+    {
+      "start": 71.75,
+      "end": 72,
+      "midi": 69,
+      "note": "A4",
+      "solfa": "fa",
+      "amplitude": 0.64
+    },
+    {
+      "start": 72,
+      "end": 72.5,
+      "midi": 67,
+      "note": "G4",
+      "solfa": "ri/me",
+      "amplitude": 0.674
+    },
+    {
+      "start": 72.5,
+      "end": 72.75,
+      "midi": 72,
+      "note": "C5",
+      "solfa": "si/le",
+      "amplitude": 0.648
+    },
+    {
+      "start": 72.75,
+      "end": 73.75,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.629
+    },
+    {
+      "start": 73.75,
+      "end": 74.25,
+      "midi": 64,
+      "note": "E4",
+      "solfa": "do",
+      "amplitude": 0.651
+    },
+    {
+      "start": 74.25,
+      "end": 74.75,
+      "midi": 69,
+      "note": "A4",
+      "solfa": "fa",
+      "amplitude": 0.652
+    },
+    {
+      "start": 74.75,
+      "end": 75,
+      "midi": 64,
+      "note": "E4",
+      "solfa": "do",
+      "amplitude": 0.69
+    },
+    {
+      "start": 75,
+      "end": 75.75,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.648
+    },
+    {
+      "start": 75.75,
+      "end": 76,
+      "midi": 77,
+      "note": "F5",
+      "solfa": "di/ra",
+      "amplitude": 0.627
+    },
+    {
+      "start": 76,
+      "end": 76.25,
+      "midi": 55,
+      "note": "G3",
+      "solfa": "ri/me",
+      "amplitude": 0.679
+    },
+    {
+      "start": 76.25,
+      "end": 77,
+      "midi": 56,
+      "note": "G#3",
+      "solfa": "mi",
+      "amplitude": 0.686
+    },
+    {
+      "start": 77,
+      "end": 78,
+      "midi": 75,
+      "note": "D#5",
+      "solfa": "ti",
+      "amplitude": 0.762
+    },
+    {
+      "start": 78,
+      "end": 79,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.678
+    },
+    {
+      "start": 79,
+      "end": 79.25,
+      "midi": 71,
+      "note": "B4",
+      "solfa": "so",
+      "amplitude": 0.723
+    },
+    {
+      "start": 79.25,
+      "end": 79.5,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.846
+    },
+    {
+      "start": 79.5,
+      "end": 80.25,
+      "midi": 75,
+      "note": "D#5",
+      "solfa": "ti",
+      "amplitude": 0.85
+    },
+    {
+      "start": 80.25,
+      "end": 82.5,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.774
+    },
+    {
+      "start": 82.5,
+      "end": 84.5,
+      "midi": 75,
+      "note": "D#5",
+      "solfa": "ti",
+      "amplitude": 0.851
+    },
+    {
+      "start": 84.5,
+      "end": 84.75,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.69
+    },
+    {
+      "start": 84.75,
+      "end": 85,
+      "midi": 71,
+      "note": "B4",
+      "solfa": "so",
+      "amplitude": 0.731
+    },
+    {
+      "start": 85,
+      "end": 86,
+      "midi": 74,
+      "note": "D5",
+      "solfa": "li/ta",
+      "amplitude": 0.737
+    },
+    {
+      "start": 86,
+      "end": 86.5,
+      "midi": 69,
+      "note": "A4",
+      "solfa": "fa",
+      "amplitude": 0.636
+    },
+    {
+      "start": 86.5,
+      "end": 86.75,
+      "midi": 60,
+      "note": "C4",
+      "solfa": "si/le",
+      "amplitude": 0.677
+    },
+    {
+      "start": 86.75,
+      "end": 87.25,
+      "midi": 64,
+      "note": "E4",
+      "solfa": "do",
+      "amplitude": 0.698
+    },
+    {
+      "start": 87.25,
+      "end": 87.5,
+      "midi": 69,
+      "note": "A4",
+      "solfa": "fa",
+      "amplitude": 0.648
+    },
+    {
+      "start": 87.5,
+      "end": 87.75,
+      "midi": 71,
+      "note": "B4",
+      "solfa": "so",
+      "amplitude": 0.558
+    },
+    {
+      "start": 87.75,
+      "end": 88.5,
+      "midi": 56,
+      "note": "G#3",
+      "solfa": "mi",
+      "amplitude": 0.649
+    },
+    {
+      "start": 88.5,
+      "end": 88.75,
+      "midi": 71,
+      "note": "B4",
+      "solfa": "so",
+      "amplitude": 0.601
+    },
+    {
+      "start": 88.75,
+      "end": 89.5,
+      "midi": 72,
+      "note": "C5",
+      "solfa": "si/le",
+      "amplitude": 0.637
+    },
+    {
+      "start": 89.5,
+      "end": 89.75,
+      "midi": 64,
+      "note": "E4",
+      "solfa": "do",
+      "amplitude": 0.719
+    },
+    {
+      "start": 89.75,
+      "end": 90.25,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.835
+    },
+    {
+      "start": 90.25,
+      "end": 91,
+      "midi": 75,
+      "note": "D#5",
+      "solfa": "ti",
+      "amplitude": 0.814
+    },
+    {
+      "start": 91,
+      "end": 91.5,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.719
+    },
+    {
+      "start": 91.5,
+      "end": 91.75,
+      "midi": 71,
+      "note": "B4",
+      "solfa": "so",
+      "amplitude": 0.71
+    },
+    {
+      "start": 91.75,
+      "end": 92,
+      "midi": 74,
+      "note": "D5",
+      "solfa": "li/ta",
+      "amplitude": 0.654
+    },
+    {
+      "start": 92,
+      "end": 92.75,
+      "midi": 69,
+      "note": "A4",
+      "solfa": "fa",
+      "amplitude": 0.616
+    },
+    {
+      "start": 92.75,
+      "end": 93,
+      "midi": 64,
+      "note": "E4",
+      "solfa": "do",
+      "amplitude": 0.656
+    },
+    {
+      "start": 93,
+      "end": 93.5,
+      "midi": 69,
+      "note": "A4",
+      "solfa": "fa",
+      "amplitude": 0.64
+    },
+    {
+      "start": 93.5,
+      "end": 93.75,
+      "midi": 71,
+      "note": "B4",
+      "solfa": "so",
+      "amplitude": 0.607
+    },
+    {
+      "start": 93.75,
+      "end": 94.25,
+      "midi": 56,
+      "note": "G#3",
+      "solfa": "mi",
+      "amplitude": 0.664
+    },
+    {
+      "start": 94.25,
+      "end": 94.75,
+      "midi": 72,
+      "note": "C5",
+      "solfa": "si/le",
+      "amplitude": 0.714
+    },
+    {
+      "start": 94.75,
+      "end": 95.75,
+      "midi": 69,
+      "note": "A4",
+      "solfa": "fa",
+      "amplitude": 0.637
+    },
+    {
+      "start": 95.75,
+      "end": 96,
+      "midi": 71,
+      "note": "B4",
+      "solfa": "so",
+      "amplitude": 0.625
+    },
+    {
+      "start": 96,
+      "end": 96.75,
+      "midi": 74,
+      "note": "D5",
+      "solfa": "li/ta",
+      "amplitude": 0.64
+    },
+    {
+      "start": 96.75,
+      "end": 97.25,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.604
+    },
+    {
+      "start": 97.25,
+      "end": 97.75,
+      "midi": 77,
+      "note": "F5",
+      "solfa": "di/ra",
+      "amplitude": 0.606
+    },
+    {
+      "start": 97.75,
+      "end": 98,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.596
+    },
+    {
+      "start": 98,
+      "end": 98.25,
+      "midi": 74,
+      "note": "D5",
+      "solfa": "li/ta",
+      "amplitude": 0.564
+    },
+    {
+      "start": 98.25,
+      "end": 99.25,
+      "midi": 65,
+      "note": "F4",
+      "solfa": "di/ra",
+      "amplitude": 0.639
+    },
+    {
+      "start": 99.25,
+      "end": 100.5,
+      "midi": 72,
+      "note": "C5",
+      "solfa": "si/le",
+      "amplitude": 0.592
+    },
+    {
+      "start": 100.5,
+      "end": 101,
+      "midi": 71,
+      "note": "B4",
+      "solfa": "so",
+      "amplitude": 0.629
+    },
+    {
+      "start": 101,
+      "end": 101.25,
+      "midi": 64,
+      "note": "E4",
+      "solfa": "do",
+      "amplitude": 0.519
+    },
+    {
+      "start": 101.25,
+      "end": 102.75,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.747
+    },
+    {
+      "start": 102.75,
+      "end": 103,
+      "midi": 75,
+      "note": "D#5",
+      "solfa": "ti",
+      "amplitude": 0.807
+    },
+    {
+      "start": 103,
+      "end": 103.75,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.816
+    },
+    {
+      "start": 103.75,
+      "end": 104.5,
+      "midi": 75,
+      "note": "D#5",
+      "solfa": "ti",
+      "amplitude": 0.818
+    },
+    {
+      "start": 104.5,
+      "end": 105.25,
+      "midi": 71,
+      "note": "B4",
+      "solfa": "so",
+      "amplitude": 0.738
+    },
+    {
+      "start": 105.25,
+      "end": 105.5,
+      "midi": 74,
+      "note": "D5",
+      "solfa": "li/ta",
+      "amplitude": 0.674
+    },
+    {
+      "start": 105.5,
+      "end": 105.75,
+      "midi": 72,
+      "note": "C5",
+      "solfa": "si/le",
+      "amplitude": 0.667
+    },
+    {
+      "start": 105.75,
+      "end": 106,
+      "midi": 69,
+      "note": "A4",
+      "solfa": "fa",
+      "amplitude": 0.647
+    },
+    {
+      "start": 106,
+      "end": 107,
+      "midi": 60,
+      "note": "C4",
+      "solfa": "si/le",
+      "amplitude": 0.685
+    },
+    {
+      "start": 107,
+      "end": 107.25,
+      "midi": 52,
+      "note": "E3",
+      "solfa": "do",
+      "amplitude": 0.637
+    },
+    {
+      "start": 107.25,
+      "end": 107.75,
+      "midi": 56,
+      "note": "G#3",
+      "solfa": "mi",
+      "amplitude": 0.653
+    },
+    {
+      "start": 107.75,
+      "end": 108,
+      "midi": 68,
+      "note": "G#4",
+      "solfa": "mi",
+      "amplitude": 0.621
+    },
+    {
+      "start": 108,
+      "end": 108.5,
+      "midi": 71,
+      "note": "B4",
+      "solfa": "so",
+      "amplitude": 0.639
+    },
+    {
+      "start": 108.5,
+      "end": 108.75,
+      "midi": 72,
+      "note": "C5",
+      "solfa": "si/le",
+      "amplitude": 0.572
+    },
+    {
+      "start": 108.75,
+      "end": 109,
+      "midi": 64,
+      "note": "E4",
+      "solfa": "do",
+      "amplitude": 0.747
+    },
+    {
+      "start": 109,
+      "end": 109.5,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.802
+    },
+    {
+      "start": 109.5,
+      "end": 110.25,
+      "midi": 75,
+      "note": "D#5",
+      "solfa": "ti",
+      "amplitude": 0.781
+    },
+    {
+      "start": 110.25,
+      "end": 111,
+      "midi": 71,
+      "note": "B4",
+      "solfa": "so",
+      "amplitude": 0.805
+    },
+    {
+      "start": 111,
+      "end": 111.25,
+      "midi": 74,
+      "note": "D5",
+      "solfa": "li/ta",
+      "amplitude": 0.674
+    },
+    {
+      "start": 111.25,
+      "end": 111.75,
+      "midi": 52,
+      "note": "E3",
+      "solfa": "do",
+      "amplitude": 0.666
+    },
+    {
+      "start": 111.75,
+      "end": 112.5,
+      "midi": 60,
+      "note": "C4",
+      "solfa": "si/le",
+      "amplitude": 0.664
+    },
+    {
+      "start": 112.5,
+      "end": 113.75,
+      "midi": 71,
+      "note": "B4",
+      "solfa": "so",
+      "amplitude": 0.632
+    },
+    {
+      "start": 113.75,
+      "end": 114,
+      "midi": 72,
+      "note": "C5",
+      "solfa": "si/le",
+      "amplitude": 0.613
+    },
+    {
+      "start": 114,
+      "end": 114.5,
+      "midi": 71,
+      "note": "B4",
+      "solfa": "so",
+      "amplitude": 0.616
+    },
+    {
+      "start": 114.5,
+      "end": 115,
+      "midi": 69,
+      "note": "A4",
+      "solfa": "fa",
+      "amplitude": 0.565
+    },
+    {
+      "start": 115.5,
+      "end": 116.5,
+      "midi": 70,
+      "note": "A#4",
+      "solfa": "fi/se",
+      "amplitude": 0.507
+    },
+    {
+      "start": 116.75,
+      "end": 117.25,
+      "midi": 74,
+      "note": "D5",
+      "solfa": "li/ta",
+      "amplitude": 0.658
+    },
+    {
+      "start": 117.25,
+      "end": 117.5,
+      "midi": 65,
+      "note": "F4",
+      "solfa": "di/ra",
+      "amplitude": 0.575
+    },
+    {
+      "start": 117.5,
+      "end": 118,
+      "midi": 73,
+      "note": "C#5",
+      "solfa": "la",
+      "amplitude": 0.733
+    },
+    {
+      "start": 118,
+      "end": 118.25,
+      "midi": 74,
+      "note": "D5",
+      "solfa": "li/ta",
+      "amplitude": 0.638
+    },
+    {
+      "start": 118.25,
+      "end": 118.75,
+      "midi": 68,
+      "note": "G#4",
+      "solfa": "mi",
+      "amplitude": 0.53
+    },
+    {
+      "start": 118.75,
+      "end": 119,
+      "midi": 74,
+      "note": "D5",
+      "solfa": "li/ta",
+      "amplitude": 0.558
+    },
+    {
+      "start": 119,
+      "end": 120.25,
+      "midi": 72,
+      "note": "C5",
+      "solfa": "si/le",
+      "amplitude": 0.578
+    },
+    {
+      "start": 120.25,
+      "end": 121,
+      "midi": 65,
+      "note": "F4",
+      "solfa": "di/ra",
+      "amplitude": 0.602
+    },
+    {
+      "start": 121,
+      "end": 121.5,
+      "midi": 72,
+      "note": "C5",
+      "solfa": "si/le",
+      "amplitude": 0.642
+    },
+    {
+      "start": 121.5,
+      "end": 123,
+      "midi": 60,
+      "note": "C4",
+      "solfa": "si/le",
+      "amplitude": 0.609
+    },
+    {
+      "start": 123,
+      "end": 123.5,
+      "midi": 72,
+      "note": "C5",
+      "solfa": "si/le",
+      "amplitude": 0.584
+    },
+    {
+      "start": 123.5,
+      "end": 123.75,
+      "midi": 62,
+      "note": "D4",
+      "solfa": "li/ta",
+      "amplitude": 0.616
+    },
+    {
+      "start": 123.75,
+      "end": 125,
+      "midi": 60,
+      "note": "C4",
+      "solfa": "si/le",
+      "amplitude": 0.664
+    },
+    {
+      "start": 125,
+      "end": 126,
+      "midi": 67,
+      "note": "G4",
+      "solfa": "ri/me",
+      "amplitude": 0.491
+    },
+    {
+      "start": 126,
+      "end": 126.75,
+      "midi": 74,
+      "note": "D5",
+      "solfa": "li/ta",
+      "amplitude": 0.596
+    },
+    {
+      "start": 126.75,
+      "end": 127,
+      "midi": 73,
+      "note": "C#5",
+      "solfa": "la",
+      "amplitude": 0.686
+    },
+    {
+      "start": 127,
+      "end": 129.5,
+      "midi": 74,
+      "note": "D5",
+      "solfa": "li/ta",
+      "amplitude": 0.687
+    },
+    {
+      "start": 129.5,
+      "end": 130.25,
+      "midi": 75,
+      "note": "D#5",
+      "solfa": "ti",
+      "amplitude": 0.652
+    },
+    {
+      "start": 130.25,
+      "end": 130.5,
+      "midi": 67,
+      "note": "G4",
+      "solfa": "ri/me",
+      "amplitude": 0.676
+    },
+    {
+      "start": 130.5,
+      "end": 130.75,
+      "midi": 72,
+      "note": "C5",
+      "solfa": "si/le",
+      "amplitude": 0.615
+    },
+    {
+      "start": 130.75,
+      "end": 131.25,
+      "midi": 62,
+      "note": "D4",
+      "solfa": "li/ta",
+      "amplitude": 0.617
+    },
+    {
+      "start": 131.25,
+      "end": 131.75,
+      "midi": 69,
+      "note": "A4",
+      "solfa": "fa",
+      "amplitude": 0.614
+    },
+    {
+      "start": 131.75,
+      "end": 133,
+      "midi": 65,
+      "note": "F4",
+      "solfa": "di/ra",
+      "amplitude": 0.575
+    },
+    {
+      "start": 133,
+      "end": 134.25,
+      "midi": 48,
+      "note": "C3",
+      "solfa": "si/le",
+      "amplitude": 0.656
+    },
+    {
+      "start": 134.25,
+      "end": 135.5,
+      "midi": 52,
+      "note": "E3",
+      "solfa": "do",
+      "amplitude": 0.65
+    },
+    {
+      "start": 135.5,
+      "end": 135.75,
+      "midi": 56,
+      "note": "G#3",
+      "solfa": "mi",
+      "amplitude": 0.607
+    },
+    {
+      "start": 135.75,
+      "end": 136.75,
+      "midi": 60,
+      "note": "C4",
+      "solfa": "si/le",
+      "amplitude": 0.71
+    },
+    {
+      "start": 136.75,
+      "end": 137,
+      "midi": 71,
+      "note": "B4",
+      "solfa": "so",
+      "amplitude": 0.571
+    },
+    {
+      "start": 137,
+      "end": 137.5,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.588
+    },
+    {
+      "start": 137.5,
+      "end": 138,
+      "midi": 60,
+      "note": "C4",
+      "solfa": "si/le",
+      "amplitude": 0.732
+    },
+    {
+      "start": 138,
+      "end": 138.5,
+      "midi": 81,
+      "note": "A5",
+      "solfa": "fa",
+      "amplitude": 0.499
+    },
+    {
+      "start": 138.5,
+      "end": 139,
+      "midi": 60,
+      "note": "C4",
+      "solfa": "si/le",
+      "amplitude": 0.623
+    },
+    {
+      "start": 139,
+      "end": 139.25,
+      "midi": 64,
+      "note": "E4",
+      "solfa": "do",
+      "amplitude": 0.581
+    },
+    {
+      "start": 139.75,
+      "end": 140,
+      "midi": 83,
+      "note": "B5",
+      "solfa": "so",
+      "amplitude": 0.57
+    },
+    {
+      "start": 140,
+      "end": 140.5,
+      "midi": 81,
+      "note": "A5",
+      "solfa": "fa",
+      "amplitude": 0.603
+    },
+    {
+      "start": 140.5,
+      "end": 140.75,
+      "midi": 77,
+      "note": "F5",
+      "solfa": "di/ra",
+      "amplitude": 0.697
+    },
+    {
+      "start": 140.75,
+      "end": 141,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.731
+    },
+    {
+      "start": 141,
+      "end": 141.5,
+      "midi": 75,
+      "note": "D#5",
+      "solfa": "ti",
+      "amplitude": 0.794
+    },
+    {
+      "start": 141.5,
+      "end": 141.75,
+      "midi": 71,
+      "note": "B4",
+      "solfa": "so",
+      "amplitude": 0.692
+    },
+    {
+      "start": 141.75,
+      "end": 142.5,
+      "midi": 74,
+      "note": "D5",
+      "solfa": "li/ta",
+      "amplitude": 0.689
+    },
+    {
+      "start": 142.5,
+      "end": 142.75,
+      "midi": 72,
+      "note": "C5",
+      "solfa": "si/le",
+      "amplitude": 0.62
+    },
+    {
+      "start": 142.75,
+      "end": 143,
+      "midi": 69,
+      "note": "A4",
+      "solfa": "fa",
+      "amplitude": 0.628
+    },
+    {
+      "start": 143,
+      "end": 143.5,
+      "midi": 60,
+      "note": "C4",
+      "solfa": "si/le",
+      "amplitude": 0.679
+    },
+    {
+      "start": 143.5,
+      "end": 144,
+      "midi": 69,
+      "note": "A4",
+      "solfa": "fa",
+      "amplitude": 0.649
+    },
+    {
+      "start": 144,
+      "end": 144.25,
+      "midi": 71,
+      "note": "B4",
+      "solfa": "so",
+      "amplitude": 0.514
+    },
+    {
+      "start": 144.25,
+      "end": 145.5,
+      "midi": 56,
+      "note": "G#3",
+      "solfa": "mi",
+      "amplitude": 0.651
+    },
+    {
+      "start": 145.5,
+      "end": 145.75,
+      "midi": 52,
+      "note": "E3",
+      "solfa": "do",
+      "amplitude": 0.639
+    },
+    {
+      "start": 145.75,
+      "end": 146,
+      "midi": 64,
+      "note": "E4",
+      "solfa": "do",
+      "amplitude": 0.737
+    },
+    {
+      "start": 146,
+      "end": 146.5,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.818
+    },
+    {
+      "start": 146.5,
+      "end": 147.25,
+      "midi": 75,
+      "note": "D#5",
+      "solfa": "ti",
+      "amplitude": 0.787
+    },
+    {
+      "start": 147.25,
+      "end": 147.75,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.73
+    },
+    {
+      "start": 147.75,
+      "end": 148,
+      "midi": 71,
+      "note": "B4",
+      "solfa": "so",
+      "amplitude": 0.696
+    },
+    {
+      "start": 148,
+      "end": 148.25,
+      "midi": 74,
+      "note": "D5",
+      "solfa": "li/ta",
+      "amplitude": 0.662
+    },
+    {
+      "start": 148.25,
+      "end": 148.75,
+      "midi": 69,
+      "note": "A4",
+      "solfa": "fa",
+      "amplitude": 0.656
+    },
+    {
+      "start": 148.75,
+      "end": 149,
+      "midi": 60,
+      "note": "C4",
+      "solfa": "si/le",
+      "amplitude": 0.692
+    },
+    {
+      "start": 149,
+      "end": 149.5,
+      "midi": 64,
+      "note": "E4",
+      "solfa": "do",
+      "amplitude": 0.685
+    },
+    {
+      "start": 149.5,
+      "end": 149.75,
+      "midi": 60,
+      "note": "C4",
+      "solfa": "si/le",
+      "amplitude": 0.692
+    },
+    {
+      "start": 149.75,
+      "end": 150,
+      "midi": 71,
+      "note": "B4",
+      "solfa": "so",
+      "amplitude": 0.604
+    },
+    {
+      "start": 150,
+      "end": 150.5,
+      "midi": 56,
+      "note": "G#3",
+      "solfa": "mi",
+      "amplitude": 0.703
+    },
+    {
+      "start": 150.5,
+      "end": 150.75,
+      "midi": 72,
+      "note": "C5",
+      "solfa": "si/le",
+      "amplitude": 0.753
+    },
+    {
+      "start": 150.75,
+      "end": 151,
+      "midi": 56,
+      "note": "G#3",
+      "solfa": "mi",
+      "amplitude": 0.703
+    },
+    {
+      "start": 151,
+      "end": 151.75,
+      "midi": 69,
+      "note": "A4",
+      "solfa": "fa",
+      "amplitude": 0.668
+    },
+    {
+      "start": 151.75,
+      "end": 152,
+      "midi": 71,
+      "note": "B4",
+      "solfa": "so",
+      "amplitude": 0.562
+    },
+    {
+      "start": 152,
+      "end": 152.25,
+      "midi": 72,
+      "note": "C5",
+      "solfa": "si/le",
+      "amplitude": 0.746
+    },
+    {
+      "start": 152.25,
+      "end": 152.75,
+      "midi": 74,
+      "note": "D5",
+      "solfa": "li/ta",
+      "amplitude": 0.639
+    },
+    {
+      "start": 152.75,
+      "end": 153.25,
+      "midi": 55,
+      "note": "G3",
+      "solfa": "ri/me",
+      "amplitude": 0.654
+    },
+    {
+      "start": 153.25,
+      "end": 153.75,
+      "midi": 77,
+      "note": "F5",
+      "solfa": "di/ra",
+      "amplitude": 0.595
+    },
+    {
+      "start": 153.75,
+      "end": 154,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.566
+    },
+    {
+      "start": 154,
+      "end": 154.5,
+      "midi": 74,
+      "note": "D5",
+      "solfa": "li/ta",
+      "amplitude": 0.534
+    },
+    {
+      "start": 154.5,
+      "end": 154.75,
+      "midi": 65,
+      "note": "F4",
+      "solfa": "di/ra",
+      "amplitude": 0.615
+    },
+    {
+      "start": 154.75,
+      "end": 155.25,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.641
+    },
+    {
+      "start": 155.25,
+      "end": 156,
+      "midi": 72,
+      "note": "C5",
+      "solfa": "si/le",
+      "amplitude": 0.564
+    },
+    {
+      "start": 156,
+      "end": 156.25,
+      "midi": 74,
+      "note": "D5",
+      "solfa": "li/ta",
+      "amplitude": 0.592
+    },
+    {
+      "start": 156.25,
+      "end": 156.75,
+      "midi": 72,
+      "note": "C5",
+      "solfa": "si/le",
+      "amplitude": 0.608
+    },
+    {
+      "start": 156.75,
+      "end": 157,
+      "midi": 74,
+      "note": "D5",
+      "solfa": "li/ta",
+      "amplitude": 0.592
+    },
+    {
+      "start": 157,
+      "end": 157.25,
+      "midi": 64,
+      "note": "E4",
+      "solfa": "do",
+      "amplitude": 0.662
+    },
+    {
+      "start": 157.25,
+      "end": 159,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.708
+    },
+    {
+      "start": 159,
+      "end": 160.5,
+      "midi": 75,
+      "note": "D#5",
+      "solfa": "ti",
+      "amplitude": 0.81
+    },
+    {
+      "start": 160.5,
+      "end": 161.25,
+      "midi": 71,
+      "note": "B4",
+      "solfa": "so",
+      "amplitude": 0.707
+    },
+    {
+      "start": 161.25,
+      "end": 161.5,
+      "midi": 74,
+      "note": "D5",
+      "solfa": "li/ta",
+      "amplitude": 0.66
+    },
+    {
+      "start": 161.5,
+      "end": 162.25,
+      "midi": 72,
+      "note": "C5",
+      "solfa": "si/le",
+      "amplitude": 0.625
+    },
+    {
+      "start": 162.25,
+      "end": 162.5,
+      "midi": 60,
+      "note": "C4",
+      "solfa": "si/le",
+      "amplitude": 0.658
+    },
+    {
+      "start": 162.5,
+      "end": 163,
+      "midi": 64,
+      "note": "E4",
+      "solfa": "do",
+      "amplitude": 0.655
+    },
+    {
+      "start": 163,
+      "end": 163.25,
+      "midi": 69,
+      "note": "A4",
+      "solfa": "fa",
+      "amplitude": 0.627
+    },
+    {
+      "start": 163.25,
+      "end": 163.5,
+      "midi": 52,
+      "note": "E3",
+      "solfa": "do",
+      "amplitude": 0.658
+    },
+    {
+      "start": 163.5,
+      "end": 164.5,
+      "midi": 56,
+      "note": "G#3",
+      "solfa": "mi",
+      "amplitude": 0.662
+    },
+    {
+      "start": 164.5,
+      "end": 165.5,
+      "midi": 72,
+      "note": "C5",
+      "solfa": "si/le",
+      "amplitude": 0.72
+    },
+    {
+      "start": 165.5,
+      "end": 166.25,
+      "midi": 76,
+      "note": "E5",
+      "solfa": "do",
+      "amplitude": 0.774
+    },
+    {
+      "start": 166.25,
+      "end": 166.75,
+      "midi": 75,
+      "note": "D#5",
+      "solfa": "ti",
+      "amplitude": 0.813
+    },
+    {
+      "start": 166.75,
+      "end": 167.5,
+      "midi": 71,
+      "note": "B4",
+      "solfa": "so",
+      "amplitude": 0.715
+    },
+    {
+      "start": 167.5,
+      "end": 167.75,
+      "midi": 74,
+      "note": "D5",
+      "solfa": "li/ta",
+      "amplitude": 0.663
+    },
+    {
+      "start": 167.75,
+      "end": 168.5,
+      "midi": 69,
+      "note": "A4",
+      "solfa": "fa",
+      "amplitude": 0.594
+    },
+    {
+      "start": 168.5,
+      "end": 169,
+      "midi": 60,
+      "note": "C4",
+      "solfa": "si/le",
+      "amplitude": 0.659
+    },
+    {
+      "start": 169,
+      "end": 169.5,
+      "midi": 69,
+      "note": "A4",
+      "solfa": "fa",
+      "amplitude": 0.643
+    },
+    {
+      "start": 169.5,
+      "end": 170,
+      "midi": 71,
+      "note": "B4",
+      "solfa": "so",
+      "amplitude": 0.633
+    },
+    {
+      "start": 170,
+      "end": 170.75,
+      "midi": 56,
+      "note": "G#3",
+      "solfa": "mi",
+      "amplitude": 0.702
+    },
+    {
+      "start": 170.75,
+      "end": 171.5,
+      "midi": 72,
+      "note": "C5",
+      "solfa": "si/le",
+      "amplitude": 0.73
+    },
+    {
+      "start": 171.5,
+      "end": 172.5,
+      "midi": 56,
+      "note": "G#3",
+      "solfa": "mi",
+      "amplitude": 0.702
+    },
+    {
+      "start": 172.5,
+      "end": 176,
+      "midi": 69,
+      "note": "A4",
+      "solfa": "fa",
+      "amplitude": 0.628
+    },
+    {
+      "start": 176,
+      "end": 176.25,
+      "midi": 60,
+      "note": "C4",
+      "solfa": "si/le",
+      "amplitude": 0.642
+    }
+  ],
+  "solfa_sequence": "do - ti - do - so - li/ta - fa - do - fa - so - mi - so - si/le - do - do - do - ti",
+  "raw_note_count": 1363,
+  "raw_note_max_timestamp": 176.39,
+  "selected_melody_max_timestamp": 176.25,
+  "tonic_solfa_max_timestamp": 176.25,
+  "final_chord_timestamp": 176.5,
+  "analysis_chunks": 7,
+  "analysis_chunk_seconds": 30,
+  "analysis_overlap_seconds": 3,
+  "dsp_seconds": 5.26,
+  "basic_pitch_seconds": 45.786,
+  "analysis_seconds": 52.248,
+  "peak_memory_mb": 678.03
+}

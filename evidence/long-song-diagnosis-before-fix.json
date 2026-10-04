@@ -1,0 +1,18 @@
+{
+  "source": "C:\\Users\\HomePC\\Desktop\\FASTKEYS\\st_louis_blues.mp3",
+  "server": "http://127.0.0.1:8000",
+  "uploaded_audio_duration_seconds": 188.151,
+  "server_returned_duration_seconds": 45.0,
+  "max_chord_event_end_seconds": 44.58,
+  "max_selected_melody_event_end_seconds": 42.75,
+  "max_tonic_solfa_event_end_seconds": 42.75,
+  "max_basic_pitch_raw_note_end_seconds": 42.543,
+  "decoded_waveform_duration_after_server_style_ffmpeg_seconds": 45.0,
+  "server_request_seconds": 9.208,
+  "raw_note_count_from_server_style_decode": 44,
+  "truncation_detected": true,
+  "first_divergence": "server.py FFmpeg preprocessing (-t 45) truncates the uploaded song before engine.analyze_audio_file receives it",
+  "engine_full_waveform_input": false,
+  "chord_window_limit": "none beyond the available chroma frames; chord coverage ends because the input waveform is already truncated",
+  "frontend_final_event_behavior": "sync() looks up active events by audio.currentTime; after the final loaded event it correctly renders no active chord/rest, exposing the backend coverage gap rather than inventing data"
+}

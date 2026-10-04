@@ -9,6 +9,10 @@ Integrates:
 6. Diatonic Tonic Sol-fa Mapping
 """
 import os
+import tempfile
+import time
+import ctypes
+import ctypes.wintypes
 import numpy as np
 import soundfile as sf
 import librosa
@@ -49,6 +53,35 @@ SOLFA_MAP = {
 }
 DEGREE_MAP = {0: '1', 2: '2', 4: '3', 5: '4', 7: '5', 9: '6', 11: '7'}
 
+BASIC_PITCH_CHUNK_SECONDS = 30.0
+BASIC_PITCH_OVERLAP_SECONDS = 3.0
+
+
+def _current_memory_mb():
+    """Return this process' resident memory without adding a runtime dependency."""
+    try:
+        if os.name == 'nt':
+            class ProcessMemoryCounters(ctypes.Structure):
+                _fields_ = [
+                    ('cb', ctypes.c_ulong), ('PageFaultCount', ctypes.c_ulong),
+                    ('PeakWorkingSetSize', ctypes.c_size_t), ('WorkingSetSize', ctypes.c_size_t),
+                    ('QuotaPeakPagedPoolUsage', ctypes.c_size_t), ('QuotaPagedPoolUsage', ctypes.c_size_t),
+                    ('QuotaPeakNonPagedPoolUsage', ctypes.c_size_t), ('QuotaNonPagedPoolUsage', ctypes.c_size_t),
+                    ('PagefileUsage', ctypes.c_size_t), ('PeakPagefileUsage', ctypes.c_size_t),
+                ]
+            counters = ProcessMemoryCounters()
+            counters.cb = ctypes.sizeof(counters)
+            get_process_memory_info = ctypes.windll.psapi.GetProcessMemoryInfo
+            get_process_memory_info.argtypes = [ctypes.wintypes.HANDLE, ctypes.POINTER(ProcessMemoryCounters), ctypes.wintypes.DWORD]
+            get_process_memory_info.restype = ctypes.wintypes.BOOL
+            if not get_process_memory_info(ctypes.windll.kernel32.GetCurrentProcess(), ctypes.byref(counters), counters.cb):
+                return None
+            return counters.WorkingSetSize / (1024 * 1024)
+        import resource
+        return resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / (1024 if os.name != 'darwin' else 1)
+    except Exception:
+        return None
+
 def clean_txt(s):
     return str(s).replace('\u266f', '#').replace('\u266d', 'b')
 
@@ -56,16 +89,130 @@ def midi_to_note_clean(midi_val):
     name = librosa.midi_to_note(int(midi_val))
     return clean_txt(name)
 
+
+def _predict_note_events(audio_path):
+    """Run Basic Pitch with the production thresholds used for every chunk."""
+    _, _, note_events = predict(
+        audio_path,
+        onset_threshold=0.5,
+        frame_threshold=0.3,
+        minimum_note_length=100.0,
+        minimum_frequency=None,
+        maximum_frequency=None,
+    )
+    return note_events
+
+
+def merge_overlapping_notes(events, start_tolerance=0.18):
+    """Deduplicate Basic Pitch events repeated in adjacent overlapping chunks.
+
+    Events are dictionaries with absolute ``start``/``end`` timestamps. Only
+    same-pitch events from different chunks with nearly identical onsets and
+    overlapping intervals are merged, so genuine repeated notes remain intact.
+    """
+    ordered = sorted(events, key=lambda event: (event['midi'], event['start'], event['end']))
+    merged = []
+    for event in ordered:
+        match = None
+        for previous in reversed(merged):
+            if previous['midi'] != event['midi']:
+                continue
+            if previous.get('chunk') == event.get('chunk'):
+                break
+            if event['start'] - previous['start'] > start_tolerance:
+                break
+            overlap = min(previous['end'], event['end']) - max(previous['start'], event['start'])
+            if overlap >= -0.05:
+                match = previous
+                break
+        if match is None:
+            merged.append(dict(event))
+        else:
+            match['start'] = min(match['start'], event['start'])
+            match['end'] = max(match['end'], event['end'])
+            match['amplitude'] = max(match['amplitude'], event['amplitude'])
+            match['chunk'] = min(match.get('chunk', 0), event.get('chunk', 0))
+    return sorted(merged, key=lambda event: (event['start'], event['midi']))
+
+
+def analysis_chunk_ranges(duration, chunk_seconds=BASIC_PITCH_CHUNK_SECONDS, overlap_seconds=BASIC_PITCH_OVERLAP_SECONDS):
+    """Yield sequential ``(start, end)`` ranges covering the full duration."""
+    if duration <= 0:
+        return
+    step = chunk_seconds - overlap_seconds
+    if step <= 0:
+        raise ValueError('overlap_seconds must be smaller than chunk_seconds')
+    start = 0.0
+    while start < duration:
+        end = min(duration, start + chunk_seconds)
+        yield round(start, 6), round(end, 6)
+        if end >= duration:
+            break
+        start += step
+
+
+def _transcribe_basic_pitch(audio_path, y, sr, duration):
+    """Transcribe a short file directly or a long file in timestamped chunks."""
+    started = time.perf_counter()
+    peak_memory_mb = _current_memory_mb()
+    if duration <= BASIC_PITCH_CHUNK_SECONDS:
+        note_events = _predict_note_events(audio_path)
+        events = [
+            {
+                'start': max(0.0, float(start)),
+                'end': min(duration, float(end)),
+                'midi': int(round(midi)),
+                'amplitude': float(amplitude),
+                'chunk': 0,
+            }
+            for start, end, midi, amplitude, _ in note_events
+            if float(end) > float(start)
+        ]
+        current_memory_mb = _current_memory_mb()
+        if current_memory_mb is not None:
+            peak_memory_mb = max(peak_memory_mb or 0.0, current_memory_mb)
+        return events, 1, time.perf_counter() - started, peak_memory_mb
+
+    events = []
+    chunk_count = 0
+    with tempfile.TemporaryDirectory(prefix='fastkeys_chunks_') as workdir:
+        for chunk_start, chunk_end in analysis_chunk_ranges(duration):
+            start_sample = int(round(chunk_start * sr))
+            end_sample = min(len(y), int(round(chunk_end * sr)))
+            chunk_path = os.path.join(workdir, f'chunk_{chunk_count:04d}.wav')
+            sf.write(chunk_path, y[start_sample:end_sample], sr)
+            for start, end, midi, amplitude, _ in _predict_note_events(chunk_path):
+                absolute_start = max(0.0, chunk_start + float(start))
+                absolute_end = min(duration, chunk_start + float(end))
+                if absolute_end > absolute_start:
+                    events.append({
+                        'start': absolute_start,
+                        'end': absolute_end,
+                        'midi': int(round(midi)),
+                        'amplitude': float(amplitude),
+                        'chunk': chunk_count,
+                    })
+            current_memory_mb = _current_memory_mb()
+            if current_memory_mb is not None:
+                peak_memory_mb = max(peak_memory_mb or 0.0, current_memory_mb)
+            chunk_count += 1
+
+    return merge_overlapping_notes(events), chunk_count, time.perf_counter() - started, peak_memory_mb
+
 def analyze_audio_file(audio_path: str):
     """
     Executes full FASTKEYS analysis: DSP Key + Chords + Basic Pitch AI notes + Melody Extraction.
+    Basic Pitch uses sequential overlapping chunks for normal-length songs so
+    every returned event remains on the original uploaded-song timeline.
     """
+    analysis_started = time.perf_counter()
     y, sr = sf.read(audio_path)
     if y.ndim > 1:
         y = np.mean(y, axis=1) # Mono conversion
     duration = len(y) / sr
     
     # 1. Key Detection
+    dsp_started = time.perf_counter()
     chroma = librosa.feature.chroma_cqt(y=y, sr=sr)
     chroma_sum = np.sum(chroma, axis=1)
     
@@ -133,19 +280,22 @@ def analyze_audio_file(audio_path: str):
             merged_chords[-1]['end'] = c['end']
             merged_chords[-1]['confidence'] = max(merged_chords[-1]['confidence'], c['confidence'])
 
-    # 3. Spotify Basic Pitch Neural Transcription
-    model_output, midi_data, note_events = predict(
-        audio_path,
-        onset_threshold=0.5,
-        frame_threshold=0.3,
-        minimum_note_length=100.0,
-        minimum_frequency=None,
-        maximum_frequency=None
-    )
+    # Keep the final detected chord active through the end of the analyzed
+    # waveform. This extends an existing segment; it never invents a chord.
+    if merged_chords:
+        merged_chords[-1]['end'] = round(duration, 2)
+
+    dsp_seconds = time.perf_counter() - dsp_started
+
+    # 3. Spotify Basic Pitch Neural Transcription. Long recordings are split
+    # into overlapping chunks and converted back to absolute timestamps.
+    note_events, analysis_chunks, basic_pitch_seconds, peak_memory_mb = _transcribe_basic_pitch(audio_path, y, sr, duration)
     
     all_ai_notes = []
-    for start, end, midi_num, amp, _ in note_events:
-        m_val = int(round(midi_num))
+    for event in note_events:
+        start = event['start']
+        end = event['end']
+        m_val = event['midi']
         interval = (m_val % 12 - root_pitch_idx) % 12
         solfa = SOLFA_MAP.get(interval, '?')
         all_ai_notes.append({
@@ -153,7 +303,7 @@ def analyze_audio_file(audio_path: str):
             'end': round(float(end), 2),
             'midi': m_val,
             'note': midi_to_note_clean(m_val),
-            'amplitude': round(float(amp), 3),
+            'amplitude': round(float(event['amplitude']), 3),
             'solfa': solfa
         })
 
@@ -173,7 +323,7 @@ def analyze_audio_file(audio_path: str):
     step = 0.25 # 250ms time window
     
     while time_cursor < duration:
-        window_end = time_cursor + step
+        window_end = min(time_cursor + step, duration)
         candidates = [
             n for n in vocal_notes
             if max(n['start'], time_cursor) < min(n['end'], window_end)
@@ -212,7 +362,18 @@ def analyze_audio_file(audio_path: str):
         'degree_sequence': degree_sequence,
         'melody_notes': clean_melody,
         'solfa_sequence': solfa_sequence,
-        'raw_note_count': len(all_ai_notes)
+        'raw_note_count': len(all_ai_notes),
+        'raw_note_max_timestamp': round(max((note['end'] for note in all_ai_notes), default=0.0), 2),
+        'selected_melody_max_timestamp': round(max((note['end'] for note in clean_melody), default=0.0), 2),
+        'tonic_solfa_max_timestamp': round(max((note['end'] for note in clean_melody), default=0.0), 2),
+        'final_chord_timestamp': round(merged_chords[-1]['end'], 2) if merged_chords else 0.0,
+        'analysis_chunks': analysis_chunks,
+        'analysis_chunk_seconds': BASIC_PITCH_CHUNK_SECONDS if duration > BASIC_PITCH_CHUNK_SECONDS else duration,
+        'analysis_overlap_seconds': BASIC_PITCH_OVERLAP_SECONDS if duration > BASIC_PITCH_CHUNK_SECONDS else 0.0,
+        'dsp_seconds': round(dsp_seconds, 3),
+        'basic_pitch_seconds': round(basic_pitch_seconds, 3),
+        'analysis_seconds': round(time.perf_counter() - analysis_started, 3),
+        'peak_memory_mb': round(peak_memory_mb, 2) if peak_memory_mb is not None else None,
     }
 
 if __name__ == '__main__':

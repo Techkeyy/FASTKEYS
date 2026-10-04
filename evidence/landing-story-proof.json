@@ -1,0 +1,149 @@
+{
+  "desktop": {
+    "metrics": {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "scrollWidth": 1440,
+      "bodyHeight": 6626,
+      "revealCount": 16,
+      "visibleRevealCount": 16,
+      "hiddenRevealLabels": [],
+      "inlineSvgCount": 4,
+      "environment": "url(\"http://127.0.0.1:8000/hero.jpg\")",
+      "previewAnimation": "previewProgress",
+      "previewAnimationCss": "6s ease-in-out infinite previewProgress",
+      "reducedMotion": false,
+      "transform": "matrix(1, 0, 0, 1, 0, 42)",
+      "resources": [
+        {
+          "name": "http://127.0.0.1:8000/style.css",
+          "transferSize": 24408
+        },
+        {
+          "name": "http://127.0.0.1:8000/music.js",
+          "transferSize": 4050
+        },
+        {
+          "name": "http://127.0.0.1:8000/app.js",
+          "transferSize": 12160
+        },
+        {
+          "name": "http://127.0.0.1:8000/hero.jpg",
+          "transferSize": 28976
+        }
+      ]
+    },
+    "sectionSnapshots": [
+      {
+        "name": "hero",
+        "visible": false
+      },
+      {
+        "name": "problem",
+        "visible": true
+      },
+      {
+        "name": "outputs",
+        "visible": true
+      },
+      {
+        "name": "preview",
+        "visible": true
+      },
+      {
+        "name": "steps",
+        "visible": true
+      },
+      {
+        "name": "transformation",
+        "visible": true
+      },
+      {
+        "name": "final",
+        "visible": true
+      }
+    ],
+    "errors": []
+  },
+  "mobile": {
+    "metrics": {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scrollWidth": 390,
+      "bodyHeight": 6090,
+      "revealCount": 16,
+      "visibleRevealCount": 16,
+      "hiddenRevealLabels": [],
+      "inlineSvgCount": 4,
+      "environment": "url(\"http://127.0.0.1:8000/hero.jpg\")",
+      "previewAnimation": "previewProgress",
+      "previewAnimationCss": "6s ease-in-out infinite previewProgress",
+      "reducedMotion": false,
+      "transform": "matrix(1, 0, 0, 1, 0, 42)",
+      "resources": [
+        {
+          "name": "http://127.0.0.1:8000/style.css",
+          "transferSize": 24408
+        },
+        {
+          "name": "http://127.0.0.1:8000/music.js",
+          "transferSize": 4050
+        },
+        {
+          "name": "http://127.0.0.1:8000/app.js",
+          "transferSize": 12160
+        },
+        {
+          "name": "http://127.0.0.1:8000/hero.jpg",
+          "transferSize": 28976
+        }
+      ]
+    },
+    "sectionSnapshots": [
+      {
+        "name": "hero",
+        "visible": false
+      },
+      {
+        "name": "problem",
+        "visible": true
+      },
+      {
+        "name": "outputs",
+        "visible": true
+      },
+      {
+        "name": "preview",
+        "visible": true
+      },
+      {
+        "name": "steps",
+        "visible": true
+      },
+      {
+        "name": "transformation",
+        "visible": true
+      },
+      {
+        "name": "final",
+        "visible": true
+      }
+    ],
+    "errors": []
+  },
+  "reducedMotion": {
+    "media": true,
+    "allRevealsVisible": true,
+    "environmentTransform": "none",
+    "transition": "none",
+    "previewAnimation": "none",
+    "previewAnimationCss": "none",
+    "scrollWidth": 390,
+    "viewportWidth": 390
+  },
+  "capturedAt": "2026-10-04T00:13:11.429Z"
+}

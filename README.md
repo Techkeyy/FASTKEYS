@@ -6,7 +6,7 @@
 
 FASTKEYS is for the moment a keyboardist gets sent an unfamiliar song shortly before rehearsal, service, or a performance. Upload the track and follow detected chords, scale degrees, movable-do tonic solfa, lead-melody guidance, and a keyboard map that stays synchronized with playback.
 
-> *“I know this song. What do I play when rehearsal starts in five minutes?”*
+> *“I’ve never played this song. What do I play when rehearsal starts in five minutes?”*
 
 ## Why FASTKEYS
 

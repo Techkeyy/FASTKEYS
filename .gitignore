@@ -13,6 +13,7 @@ dist/
 .venv311/
 
 .backboard/
+.entire/
 director.md
 evidence/
 .agents/

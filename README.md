@@ -180,9 +180,6 @@ Render hosts the live FASTKEYS application and the Basic Pitch inference runtime
 
 Backboard was used during development and verification through R-CLI to exercise the deployed API and analysis flow.
 
-### Entire
-
-Entire was used to preserve and inspect development history, including the evolution from an early DSP-only prototype to the Basic Pitch transcription architecture.
 
 ## Credits
 

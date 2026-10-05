@@ -446,7 +446,7 @@ def analyze_audio_file(audio_path: str):
     return result
 
 if __name__ == '__main__':
-    test_file = r'c:\Users\HomePC\Desktop\FASTKEYS\nearer_my_god_30s.wav'
+    test_file = os.path.join(os.path.dirname(__file__), 'nearer_my_god_30s.wav')
     print(f"Testing Analysis Engine on: {test_file}")
     res = analyze_audio_file(test_file)
     print("\nResult:")

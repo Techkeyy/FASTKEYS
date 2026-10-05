@@ -1,10 +1,10 @@
-const { chromium } = require('C:/Users/HomePC/Desktop/CLINCH-DEMO/node_modules/playwright-core');
+const { chromium } = require(process.env.FASTKEYS_PLAYWRIGHT_MODULE||'playwright-core');
 const fs = require('fs');
 const assert = require('node:assert/strict');
 
 const base = process.env.FASTKEYS_SERVER_URL || 'http://127.0.0.1:8012';
 const source = 'st_louis_blues.mp3';
-const executablePath = 'C:/Users/HomePC/AppData/Local/ms-playwright/chromium-1243/chrome-win64/chrome.exe';
+const executablePath = process.env.FASTKEYS_BROWSER;
 
 function activeEvent(events, t, duration, includeFinal = false) {
   const last = events.length - 1;

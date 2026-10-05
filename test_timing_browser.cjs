@@ -1,10 +1,10 @@
-const { chromium } = require('C:/Users/HomePC/Desktop/CLINCH-DEMO/node_modules/playwright-core');
+const { chromium } = require(process.env.FASTKEYS_PLAYWRIGHT_MODULE||'playwright-core');
 const fs = require('node:fs');
 const assert = require('node:assert/strict');
 
 const base = process.env.FASTKEYS_SERVER_URL || 'http://127.0.0.1:8012';
 const source = 'timing_fixture_C.wav';
-const executablePath = process.env.FASTKEYS_BROWSER || 'C:/Users/HomePC/AppData/Local/ms-playwright/chromium-1243/chrome-win64/chrome.exe';
+const executablePath = process.env.FASTKEYS_BROWSER;
 const expectedMelody = [
   { midi: 60, start: 0.25, end: 0.75 },
   { midi: 65, start: 1.25, end: 1.75 },

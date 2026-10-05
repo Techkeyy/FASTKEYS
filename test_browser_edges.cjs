@@ -1,7 +1,7 @@
-const {chromium}=require(process.env.FASTKEYS_PLAYWRIGHT_MODULE||'C:/Users/HomePC/Desktop/CLINCH-DEMO/node_modules/playwright-core');
+const {chromium}=require(process.env.FASTKEYS_PLAYWRIGHT_MODULE||'playwright-core');
 const fs=require('node:fs'),assert=require('node:assert/strict');
 (async()=>{
- const browser=await chromium.launch({headless:true,executablePath:process.env.FASTKEYS_BROWSER||'C:/Users/HomePC/AppData/Local/ms-playwright/chromium-1243/chrome-win64/chrome.exe'});
+ const browser=await chromium.launch({headless:true,executablePath:process.env.FASTKEYS_BROWSER});
  const page=await browser.newPage({viewport:{width:320,height:740}});const proof={};await page.goto('http://127.0.0.1:8000');
  proof.landing320=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth}));
  // Replay a saved real inference response to exercise the browser without repeating inference.

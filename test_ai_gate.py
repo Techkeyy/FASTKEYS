@@ -8,11 +8,14 @@ import os
 import sys
 import time
 import tracemalloc
+from pathlib import Path
 import numpy as np
 import soundfile as sf
 import librosa
 from basic_pitch.inference import predict
 from basic_pitch import ICASSP_2022_MODEL_PATH
+
+ROOT = Path(__file__).resolve().parent
 
 MAJOR_PROFILE = np.array([6.35, 2.23, 3.48, 2.33, 4.38, 4.09, 2.52, 5.19, 2.39, 3.66, 2.29, 2.88])
 MINOR_PROFILE = np.array([6.33, 2.68, 3.52, 5.38, 2.60, 3.53, 2.54, 4.75, 3.98, 2.69, 3.34, 3.17])
@@ -244,28 +247,28 @@ if __name__ == '__main__':
     fixtures = [
         (
             "Case 1: Clean Hymn Keyboard / Pad",
-            r"c:\Users\HomePC\Desktop\FASTKEYS\fixture_hymn_G.wav",
+            str(ROOT / "fixture_hymn_G.wav"),
             "G Major",
             ["G", "C", "G"],
             "G3 (do) -> C4 (fa) -> E4 (la) -> C4 (fa) -> E4 (la) -> D4 (so) -> C4 (fa) -> A3 (re) -> G3 (do)"
         ),
         (
             "Case 2: Lead Instrument + Accompaniment",
-            r"c:\Users\HomePC\Desktop\FASTKEYS\fixture_lead_D.wav",
+            str(ROOT / "fixture_lead_D.wav"),
             "D Major",
             ["D", "G"],
             "A3 (so) -> A3 (so) -> G3 (fa) -> F#3 (mi) -> E3 (re) -> D3 (do) -> E3 (re) -> F#3 (mi) -> G3 (fa) -> A3 (so)"
         ),
         (
             "Case 3: Realistic Pop Loop (C-G-Am-F) + Lead",
-            r"c:\Users\HomePC\Desktop\FASTKEYS\fixture_pop_C.wav",
+            str(ROOT / "fixture_pop_C.wav"),
             "C Major",
             ["C", "G", "Am", "F"],
             "E4 (mi) -> D4 (re) -> C4 (do) -> D4 (re) -> B3 (ti) -> C4 (do) -> D4 (re) -> C4 (do) -> A3 (la) -> C4 (do) -> A3 (la) -> G3 (so) -> F3 (fa)"
         ),
         (
             "Case 4: Reference Organ Hymn (Real Acoustic Recording)",
-            r"c:\Users\HomePC\Desktop\FASTKEYS\when_i_survey.wav",
+            str(ROOT / "when_i_survey.wav"),
             "D Major",
             ["D", "A", "D", "G", "A", "D"],
             "Hamburg tune line 1: A3 (so) -> A3 (so) -> B3 (la) -> A3 (so) -> F#3 (mi) ..."

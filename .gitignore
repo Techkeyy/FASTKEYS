@@ -13,4 +13,6 @@ dist/
 .venv311/
 
 .backboard/
-evidence/*.log
+director.md
+evidence/
+.agents/

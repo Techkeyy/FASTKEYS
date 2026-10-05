@@ -1,7 +1,7 @@
-const { chromium } = require('C:/Users/HomePC/Desktop/CLINCH-DEMO/node_modules/playwright-core');
+const { chromium } = require(process.env.FASTKEYS_PLAYWRIGHT_MODULE||'playwright-core');
 const fs = require('fs');
 ;(async () => {
-  const browser = await chromium.launch({ headless: true, executablePath: 'C:/Users/HomePC/AppData/Local/ms-playwright/chromium-1243/chrome-win64/chrome.exe' });
+  const browser = await chromium.launch({ headless: true, executablePath: process.env.FASTKEYS_BROWSER });
   const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
   await page.goto('http://127.0.0.1:8000/', { waitUntil: 'networkidle' });
   const chooser = page.waitForEvent('filechooser');

@@ -1,8 +1,8 @@
 // Run with FASTKEYS_PLAYWRIGHT_MODULE pointing at an installed playwright-core.
-const {chromium}=require(process.env.FASTKEYS_PLAYWRIGHT_MODULE||'C:/Users/HomePC/Desktop/CLINCH-DEMO/node_modules/playwright-core');
+const {chromium}=require(process.env.FASTKEYS_PLAYWRIGHT_MODULE||'playwright-core');
 const fs=require('node:fs'),assert=require('node:assert/strict');
 const base=process.env.FASTKEYS_SERVER_URL||'http://127.0.0.1:8000';
-const executablePath=process.env.FASTKEYS_BROWSER||'C:/Users/HomePC/AppData/Local/ms-playwright/chromium-1243/chrome-win64/chrome.exe';
+const executablePath=process.env.FASTKEYS_BROWSER;
 const snap=page=>page.evaluate(()=>({time:document.querySelector('audio').currentTime,paused:document.querySelector('audio').paused,src:document.querySelector('audio').src,ready:document.querySelector('audio').readyState,degree:document.querySelector('#currentDegree').textContent,chord:document.querySelector('#currentChord').textContent,solfa:document.querySelector('#currentSolfa').textContent,note:document.querySelector('#currentNote').textContent,chordKeys:[...document.querySelectorAll('.active-chord')].map(e=>+e.dataset.midi),melodyKeys:[...document.querySelectorAll('.active-melody')].map(e=>+e.dataset.midi),activeChord:document.querySelector('.chord-item.active')?.id,activeSolfa:document.querySelector('.solfa-item.active')?.id}));
 (async()=>{
  fs.mkdirSync('evidence',{recursive:true});const browser=await chromium.launch({headless:true,executablePath});

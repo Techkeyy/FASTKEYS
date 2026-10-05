@@ -1,7 +1,7 @@
-const {chromium}=require(process.env.FASTKEYS_PLAYWRIGHT_MODULE||'C:/Users/HomePC/Desktop/CLINCH-DEMO/node_modules/playwright-core');
+const {chromium}=require(process.env.FASTKEYS_PLAYWRIGHT_MODULE||'playwright-core');
 const fs=require('node:fs'),assert=require('node:assert/strict'),M=require('./web/music.js');
 (async()=>{
- const browser=await chromium.launch({headless:true,executablePath:process.env.FASTKEYS_BROWSER||'C:/Users/HomePC/AppData/Local/ms-playwright/chromium-1243/chrome-win64/chrome.exe'});
+ const browser=await chromium.launch({headless:true,executablePath:process.env.FASTKEYS_BROWSER});
  const page=await browser.newPage({viewport:{width:1440,height:1000}});await page.goto(process.env.FASTKEYS_SERVER_URL||'http://127.0.0.1:8011');
  const responsePromise=page.waitForResponse(r=>r.url().endsWith('/api/analyze'),{timeout:240000});await page.locator('#audioFileInput').setInputFiles('chopin_e_minor_30s.wav');const response=await responsePromise;assert.equal(response.status(),200);const data=await response.json();fs.writeFileSync('evidence/chopin-minor-analysis.json',JSON.stringify(data,null,2));await page.locator('#screenWorkspace').waitFor({state:'visible'});
  const state=()=>page.evaluate(()=>({time:document.querySelector('audio').currentTime,degree:document.querySelector('#currentDegree').textContent,chord:document.querySelector('#currentChord').textContent,solfa:document.querySelector('#currentSolfa').textContent,note:document.querySelector('#currentNote').textContent,melody:[...document.querySelectorAll('.active-melody')].map(e=>+e.dataset.midi)}));

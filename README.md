@@ -6,21 +6,19 @@
 
 FASTKEYS is for the moment a keyboardist gets sent an unfamiliar song shortly before rehearsal, service, or a performance. Upload the track and follow detected chords, scale degrees, movable-do tonic solfa, lead-melody guidance, and a keyboard map that stays synchronized with playback.
 
+> *“I know this song. What do I play when rehearsal starts in five minutes?”*
+
 ## Why FASTKEYS
 
 A keyboardist can know the song and still have no useful starting point when the first chord is minutes away. They normally need to work out the key, chord movement, number system, melody or solfa, and practical keyboard positions separately.
 
 FASTKEYS gives them one place to start. The original recording remains the reference while the musical map follows it.
 
-## Architecture
+## What FASTKEYS Does
 
-| Area | Responsibility |
-|---|---|
-| `server.py` | Accept uploads, normalize audio, run analysis, and clean up temporary files |
-| `engine.py` | Detect key and chords, transcribe notes, reconcile overlaps, and select melody |
-| `web/app.js` | Drive uploads, playback, seeking, transpose, and synchronized rendering |
-| `web/music.js` | Spell notes, degrees, solfa, and keyboard guidance in musical context |
-| `web/index.html` / `web/style.css` | Present the landing experience and Play-Along workspace |
+1. **Upload a song.** Choose a recording locally or start with one of the packaged samples.
+2. **Build a musical map.** Basic Pitch finds timestamped notes, then FASTKEYS adds key, chord, degree, solfa, melody, and keyboard context.
+3. **Play along.** Follow the map while the original recording plays, seek to another section, or transpose the guidance for a different key.
 
 ## How It Works
 
@@ -37,6 +35,16 @@ Play the original track
     ↓
 The musical map follows playback
 ```
+
+## Architecture
+
+| Area | Responsibility |
+|---|---|
+| `server.py` | Accept uploads, normalize audio, run analysis, and clean up temporary files |
+| `engine.py` | Detect key and chords, transcribe notes, reconcile overlaps, and select melody |
+| `web/app.js` | Drive uploads, playback, seeking, transpose, and synchronized rendering |
+| `web/music.js` | Spell notes, degrees, solfa, and keyboard guidance in musical context |
+| `web/index.html` / `web/style.css` | Present the landing experience and Play-Along workspace |
 
 ## Play-Along
 
